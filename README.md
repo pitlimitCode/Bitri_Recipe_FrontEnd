@@ -1,3 +1,54 @@
+
+
+- Landing Page (new recipe, and 6 recipe with pagination), 
+- URL Params (Search, Sort, dan Pagination)
+- Hooks [function component, atomic design]
+
+## Tugas Frontend dgn React 05 juli:
+- Melanjutkan program Backend Sebelumnya
+- Semua requirement dari Week sebelumnya
+- Navigation (Public & Private) (private *)
+- Slicing: 
+  - Login, 
+  - register, 
+  - Landing Page (new recipe, and 6 recipe with pagination), 
+  - Detail recipe,
+  - nambah recipe,
+  - profile (foto, nama, resep yang udah dibuat)
+- localStorage (*)
+- Redux (CRUD) & with file (*)
+- URL Params (Search, Sort, dan Pagination)
+- Build & Deploy (*)
+- ENV
+- Responsive (optional, nilai plus)
+- Linter
+- Hooks [function component, atomic design]
+- Webpack (tidak perlu)
+- Persist storage (tidak perlu)
+- Gunakan Bahasa Inggris untuk nama File dan Fungsi
+- Upload/push tugas kamu ke github dan gunakan nama yang profesional
+- Presentasikan apa yang telah Anda lakukan dalam minggu ini
+  - Jelaskan dengan bahasa kalian sendiri tentang apa itu dan konsep tentang:
+    - Redux
+    - HOC
+  - Ceritakan dan Demokan tentang proyek ini
+- Css design pakai react bootstrap atau bootstrap  
+
+(*)dijelaskan di kelas tambahan  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
