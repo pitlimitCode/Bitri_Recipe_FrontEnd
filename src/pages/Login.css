@@ -1,0 +1,38 @@
+.login {
+    /* text-align: center; */
+    width: 1920px;
+    height: 1587px;
+    background-color: cyan;
+}
+
+.loginImage{
+    /* width: 960px; */
+}
+
+.left {
+    background: url("./loginImage.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:auto;
+    height: 1587px;
+    /* width: 960px; */
+    background-color: purple;
+}
+
+.rigth {
+    /* align: center; */
+    /* height: 1587px; */
+    /* width: 960px; */
+    background-color: green;
+
+}
+
+.form {
+    align-items: center;
+    width: 426px;
+    margin: 529px auto 490px auto;
+}
+
+.title{
+    color: #EFC81A;
+}
