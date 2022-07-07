@@ -1,109 +1,126 @@
 import searchImage from './searchImage.png';
 import newestRecipe from './newestRecipe.png';
 import './LandingPage.css';
-import {Container, Row, Col, Button, Navbar, Nav, Form} from 'react-bootstrap';
+import { 
+  Container, 
+  Row, 
+  Col, 
+  Button, 
+  Form,
+  // Pagination,
+} from 'react-bootstrap';
 
 function LandingPage() {
   return (
-    <Container>
-      <div className='landingPage'>
-        <div className='inContainer'>
+    <div className='landingPage'>
+      <Container>
+      
+        
+        <Row className="mb-5">
+
+        
+          <Col md={5}>
+            <div className='centering textLeft'>
+              <h1 className='textLeft'>Discover Recipe</h1>
+              <h1 className='textLeft'>& Delicious Food</h1>
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Control type="text" placeholder="Search recipe" />
+              </Form.Group>
+              {/* <Button variant="primary" type="submit" className="button">
+                Submit
+              </Button> */}
+            </div>
+          </Col>
+
+          <Col md={1}></Col>
+          <Col md={6}>
+            <img src={searchImage} alt="search pic"></img>
+          </Col>
+        </Row>
 
 
-          <Row>
-            <Navbar bg="light" variant="light">
-              <Nav className="me-auto">
-                <Nav.Link nameClass="navlink" href="Profile">Profile</Nav.Link>
-                <Nav.Link nameClass="navlink" href="Home">Home</Nav.Link>
-                <Nav.Link nameClass="navlink" href="Recipe">Recipe</Nav.Link>
-              </Nav>
-            </Navbar>
-          </Row>
+        <Row className="mb-4">
+          <h4>New Recipe</h4>
+        </Row>
 
-          <Row>
-            <Col>
-              <p className="pSearch">Discover Recipe & Delicious Food</p>
-              <Form>
-                <Form.Group className="mb-3" controlId="formSearch">
-                  <Form.Label className='fontLabel'>Email</Form.Label>
-                  <Form.Control size="lg" type="recipe" placeholder="Search Recipe" />
-                  <Form.Text className="text-muted"></Form.Text>
-                </Form.Group>
-              </Form>
-            </Col>
-            <Col>
-              <img src={searchImage} className="searchImage" alt="Search Pic" />
-            </Col>
-          </Row>
-
-          <Row>
-            <p className="titleSub">New Recipe</p>
-          </Row>
-
-          <Row>
-            <Col>
-              <img src={newestRecipe} className="newestRecipe" alt="Newest Recipe" />
-            </Col>
-
-            <Col>
-              <p className="pNewRec">New Recipe Name !!!</p>
+        <Row className="mb-5">
+          <Col md={6}>
+            <img src={newestRecipe} alt="search pic"></img>
+          </Col>
+          <Col md={1}></Col>
+          <Col md={5}>
+            <div className='centering textLeft'>
+              <h3>NEW_RECIPE_NAME</h3>
+              <p>STEP_COOK_RECIPE</p>
+              <Button variant="primary" type="submit" className="button" href="/detailrecipe">
+                Learn More
+              </Button>
+            </div>
+          </Col>
+        </Row>
 
 
+        {/* Harusnya pagination semua recipe yang ada*/}
+        <Row className="mb-4">
+          <h4>All recipe</h4>
+        </Row>
 
-            </Col>
-          </Row>
+        <Row className="mb-4">
+          <Col>
+            <img src={newestRecipe} alt="search pic"></img>
+          </Col>
+          <Col>
+            <img src={newestRecipe} alt="search pic"></img>
+          </Col>
+          <Col>
+            <img src={newestRecipe} alt="search pic"></img>
+          </Col>
+        </Row>
+        <Row className="mb-4">
+          <Col>
+            <img src={newestRecipe} alt="search pic"></img>
+          </Col>
+          <Col>
+            <img src={newestRecipe} alt="search pic"></img>
+          </Col>
+          <Col>
+            <img src={newestRecipe} alt="search pic"></img>
+          </Col>
+        </Row>
+        <Row>
+        
 
-          
-          <Row>
-            <p className="titleSub">All Recipes</p>
-          </Row>
 
-          <Row>
+        {/* let active = 2;
+        let items = [];
+        for (let number = 1; number <= 5; number++) {
+          items.push(
+            <Pagination.Item key={number} active={number === active}>
+              {number}
+            </Pagination.Item>,
+          );
+        }
 
-          </Row>
-          
+        const paginationBasic = (
+          <div>
+            <Pagination>{items}</Pagination>
+            <br />
 
-          <Row>
-          <div className="bgFooter">
-            <Col xs={4}>
+            <Pagination size="lg">{items}</Pagination>
+            <br />
 
-            </Col>
-
-            <Col xs={4}>
-              <p>Eat, Cook, Repeat</p>
-              <p>Share your best recipe by uploading here !</p>
-              <Row>
-                <Col xs={3}>
-
-                </Col>
-                <Col xs={3}>
-
-                </Col>
-                <Col xs={3}>
-
-                </Col>
-                <Col xs={3}>
-
-                </Col>
-              </Row>
-              
-            </Col>
-
-            <Col xs={4}>
-              <p className="titleSub">Pijar Camp</p>
-            </Col>
-
+            <Pagination size="sm">{items}</Pagination>
           </div>
-          </Row>
+        );
+
+        render(paginationBasic); */}
 
 
 
-          <Button></Button>
+        </Row>
 
-
-        </div>
-      </div>
-    </Container>
+      </Container>
+    </div>
   );
 }
 

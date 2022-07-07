@@ -1,4 +1,4 @@
-// import loginImage from './loginImage.png';
+import loginImage from './loginImage.png';
 import './Login.css';
 import {Container, Row, Col, Form, Button} from 'react-bootstrap';
 
@@ -9,7 +9,7 @@ function Login() {
         <Row>
           <Col>
             <div className='left'>
-              {/* <img src={loginImage} className="loginImage" alt="loginImage" /> */}
+              <img src={loginImage} className="loginImage" alt="loginImage" />
             </div>
           </Col>
           <Col>
