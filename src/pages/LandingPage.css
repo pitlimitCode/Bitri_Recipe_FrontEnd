@@ -14,8 +14,8 @@
     border: 5px solid red ;
 }
 
-.loginImage{
-    /* width: 960px; */
+.navlink{
+    margin-right: 50px;
 }
 
 .left {
@@ -36,6 +36,58 @@
     /* position: relative; */
 
 }
+
+img{
+    width: 700px;
+    height: 700px;
+    border-radius: 15px;
+ }
+
+.pSearch{
+    text-align: left;
+    color: #2E266F;
+    font-size: 72px;
+    font-family: Airbnb Cereal App;
+    font-weight: 500;
+    line-height: 90px;
+    margin-top: 100px;
+    
+}
+
+.titleSub{
+    text-align: left;
+    color: #3F3A3A;
+    font-size: 48px;
+    font-family: Airbnb Cereal App;
+    font-weight: 500;
+    line-height: 62px;
+    margin-top: 100px;
+}
+
+.pNewRec{
+    text-align: center;
+    color: #3F3A3A;
+    font-size: 56px;
+    font-family: Airbnb Cereal App;
+    font-weight: 500;
+    line-height: 73px;
+    margin-top: 100px;
+}
+
+ 
+.bgFooter{
+    background-color: #EFC81A;
+}
+
+
+
+
+
+
+
+
+
+
 
 .form {
     /* align-items: center; */

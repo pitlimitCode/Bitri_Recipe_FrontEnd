@@ -1,7 +1,6 @@
 // import loginImage from './loginImage.png';
 import './Login.css';
-import Container from 'react-bootstrap/Container';
-import {Row, Col, Form, Button} from 'react-bootstrap';
+import {Container, Row, Col, Form, Button} from 'react-bootstrap';
 
 function Login() {
   return (
