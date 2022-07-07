@@ -10,24 +10,22 @@ function LandingPage() {
         <div className='inContainer'>
 
 
-
-
           <Row>
             <Navbar bg="light" variant="light">
               <Nav className="me-auto">
-                <Nav.Link href="#home">Home</Nav.Link>
-                <Nav.Link href="#features">Add Recipe</Nav.Link>
-                <Nav.Link href="#pricing">Profile</Nav.Link>
+                <Nav.Link href="Profile">Profile</Nav.Link>
+                <Nav.Link href="Home">Home</Nav.Link>
+                <Nav.Link href="Recipe">Recipe</Nav.Link>
               </Nav>
             </Navbar>
           </Row>
+
           <Row>
             <Col>
             </Col>
           </Row>
+
           <Button></Button>
-
-
 
 
         </div>
