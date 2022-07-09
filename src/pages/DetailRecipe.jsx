@@ -1,17 +1,18 @@
-import './DetailRecipe.css';
-import defaultDetailRecipe from './defaultDetailRecipe.png';
 import { 
-  Container, 
   Row, 
   Col, 
   Button, 
   Form,
 } from 'react-bootstrap';
+import NavbarPage from "../components/organism/NavbarPage";
+import FooterTop from "../components/organism/FooterTop";
+import FooterBottom from "../components/organism/FooterBottom";
+import defaultDetailRecipe from '../assets/defaultDetailRecipe.png';
 
 function DetailRecipe() {
   return (
     <div className='detailRecipe'>
-      <Container>
+      <NavbarPage />
       
         <Row>
           <Col></Col>
@@ -44,8 +45,9 @@ function DetailRecipe() {
         </Row>
 
         
+          <FooterTop />
+          <FooterBottom />
 
-      </Container>
     </div>
   );
 }

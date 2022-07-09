@@ -1,22 +1,19 @@
-import loginImage from './loginImage.png';
-import './Profile.css';
 import {
-  Container, 
-  // Row, 
-  // Col, 
-  // Form, 
-  // Button,
-  // Image
   Nav,
 } from 'react-bootstrap';
+import NavbarPage from "../components/organism/NavbarPage";
+import FooterBottom from "../components/organism/FooterBottom";
+import defaultAvatar from '../assets/defaultAvatar.jpg';
 
 function Profile() {
   return (
     <div className="Profile">
-      <img src={loginImage} alt='user avatar' className="avatar"></img>
-      {/* <Image src={loginImage} rounded ></Image> */}
-    <p>TEST FONT !! 123 abcde</p>
-      <Container>
+      <NavbarPage />
+
+      <img src={defaultAvatar} alt='user avatar' className="avatar"></img>
+      {/* <Image src={defaultAvatar} rounded ></Image> */}
+      <h5 className="mt-3">PARAGRAF TEMPAT ISI NAMA !!!</h5>
+      
         <Nav variant="tabs" defaultActiveKey="/home">
           <Nav.Item>
             <Nav.Link href="/profile">My Recipe</Nav.Link>
@@ -30,8 +27,8 @@ function Profile() {
           </Nav.Item>
         </Nav>
         <hr/>
-      
-      </Container>
+        
+        <FooterBottom />
 
     </div>
   );

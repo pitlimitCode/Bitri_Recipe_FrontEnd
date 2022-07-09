@@ -1,5 +1,7 @@
 import './App.css';
 import { Routes, Route } from "react-router-dom";
+import { ProfileContext } from "./context";
+
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import LandingPage from "./pages/LandingPage";
@@ -9,28 +11,14 @@ import DetailRecipe from "./pages/DetailRecipe";
 import UrlNotFound from "./pages/urlNotFound";
 import { 
   Container, 
-  Row,
-  Col,
-  Navbar, 
-  Nav, 
 } from 'react-bootstrap';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-    <Container>
-      <Row className="mb-4">
-        <Navbar bg="transparent" variant="light">
-          <Nav className="me-auto">
-            <Nav.Link nameClass="navlink" href="/">Home</Nav.Link>
-            <Nav.Link nameClass="navlink" href="newrecipe">Add Recipe</Nav.Link>
-            <Nav.Link nameClass="navlink" href="profile">Profile</Nav.Link>
-            <Nav.Link nameClass="navlink" href="login">Login</Nav.Link>
-            <Nav.Link nameClass="navlink" href="register">Register</Nav.Link>
-          </Nav>
-        </Navbar>
-      </Row>
+  <Container className="App">
+    <ProfileContext.Provider value={{ name: "PROFIL CONTEXT DI APP.JS" }}>
 
+      {/* MAIN ROUTE */}
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="Login" element={<Login />} />
@@ -41,41 +29,7 @@ function App() {
         <Route path="*" element={<UrlNotFound />} />
       </Routes>
 
-
-
-      <div className='footer'>
-        <Row className='pt-5'>
-          <Col>
-          </Col>
-          <Col className="mb-5">
-            <h1>Eat, Cook, Repeat</h1>
-            <p className='footerP'>Share your best recipe by uploading here !</p>
-          </Col>
-          <Col>
-          </Col>
-
-        </Row>
-          
-        <Row className='pb-2'>
-          <Col>
-          </Col>
-          <Col>
-            <p className='footerP'>Product Company Learn more Get in touch </p>
-          </Col>
-          <Col>
-            <a className='footerP' href="https://camp.pijarmahir.id/class/fullstack-website-developer">
-              <strong>PijarCAmp</strong>
-            </a>
-          </Col>
-
-        </Row>
-      </div>
-
-    </Container>
-    </div>
+    </ProfileContext.Provider>
+  </Container>
   );
 }
-
-
-
-export default App;

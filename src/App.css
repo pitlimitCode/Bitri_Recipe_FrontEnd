@@ -1,34 +1,122 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap'); /* font-family: 'inter'; */
 *{
   font-family: 'inter';
+ /*  */
 }
 
-.footer{
-  margin-top: 50px;
-  background-color: #EFC81A;
+.yellowIt{
+  color: #EFC81A;
 }
-
-.footerP{
-  font-size: 10px;
-  color: #707070;
-  text-decoration: none;
+.App {
+  text-align: center;
+  /* background-color: gainsboro; */
+  border: 1px solid red;
 }
 
 .button{
   background-color: #EFC81A;
+  border: none;
+  color: white;
 }
 
 .textLeft{
   text-align: left;
 }
 
-
-.App {
-  text-align: center;
-  
-  /* /////////////////////////////////// */
-  border: 1px solid red;
+.left{
+  width: 100%;
 }
+/* Form Login and Register START */
+.loginForm {
+  margin-top: 280px;
+}
+.registerForm {
+  margin-top: 200px;
+}
+.title{
+  color: #EFC81A;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+.descForm{
+  color: #8692A6;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 13px;
+}
+.fontLabel{
+  color: #696F79;
+  font-size: 14px;
+  font-weight: 300;
+}
+.forgotPassword{
+  color: #999;
+  text-align: right;
+  font-size: 12px;
+  font-weight: 500;
+}
+.descBottomForm{
+  color: #999;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+}
+/* Form Login and Register END */
+
+h1{
+  font-size: 30px;
+  color: #2E266F;
+}
+
+.pic100{
+  max-width: 100%;
+}
+
+h4{
+  text-align: left;
+  /* margin-top: 200px;
+  margin-bottom: 100px; */
+}
+
+.centering{
+  align-content: center;
+  margin-top: 35%;
+}
+
+.detailRecipeImage{
+  width: 100%;
+}
+
+.mb-3{
+  border-radius: 90px;
+}
+
+.avatar{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+/* Footer START */
+.footerTop{
+  margin-top: 50px;
+  background-color: #EFC81A;
+}
+.footerBottom{
+  background-color: #EFC81A;
+}
+.footerP{
+  font-size: 10px;
+  color: #707070;
+  text-decoration: none;
+}
+/* Footer END */
+
+
+
 
 
 

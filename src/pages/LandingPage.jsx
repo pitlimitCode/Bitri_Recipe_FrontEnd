@@ -1,24 +1,67 @@
-import searchImage from './searchImage.png';
-import newestRecipe from './newestRecipe.png';
-import './LandingPage.css';
+import React from "react";
+// import axios from "axios";
 import { 
-  Container, 
   Row, 
   Col, 
   Button, 
   Form,
   // Pagination,
 } from 'react-bootstrap';
+import NavbarPage from "../components/organism/NavbarPage";
+import FooterTop from "../components/organism/FooterTop";
+import FooterBottom from "../components/organism/FooterBottom";
+import newestRecipe from '../assets/newestRecipe.png';
+import searchImage from '../assets/searchImage.png';
 
 function LandingPage() {
+  // const [listPhoto, setListPhoto] = React.useState([]);
+  // const [isLoading, setIsLoading] = React.useState([]);
+
+  // React.useEffect(() => {
+  //   if (!localStorage.getItem("token")) {
+  //     window.location.href = "/login";
+  //   }
+  // }, []);
+
+  // React.useEffect(() => {
+  //   axios.get("https://jsonplaceholder.typicode.com/photos")
+  //     .then((res) => {
+  //       setListPhoto(res.data);
+  //       setTimeout(() => {
+  //         setIsLoading(false);
+  //       }, 10000);
+  //     });
+  // }, []);
+
   return (
     <div className='landingPage'>
-      <Container>
-      
-        
-        <Row className="mb-5">
 
-        
+      <NavbarPage />
+      
+        {/* <Container>
+          <Row>
+            {isLoading ? (
+              <>
+        {[...Array(6)]?.map(() => (
+          <Col lg={4}>
+            <CardImage image={ "https://cdn.dribbble.com/users/2973561/screenshots/5757826/loading__.gif" }/>
+          </Col>
+        ))}
+              </>
+            ) : (
+              <>
+        {listPhoto?.map((item) => (
+          <Col lg={4}>
+            <CardImage image={item?.url} title={item?.title} />
+          </Col>
+        ))}
+              </>
+            )}
+          </Row>
+        </Container> */}
+
+
+        <Row className="mb-5">
           <Col md={5}>
             <div className='centering textLeft'>
               <h1 className='textLeft'>Discover Recipe</h1>
@@ -34,7 +77,7 @@ function LandingPage() {
 
           <Col md={1}></Col>
           <Col md={6}>
-            <img src={searchImage} alt="search pic"></img>
+            <img src={searchImage} className="pic100" alt="search pic"></img>
           </Col>
         </Row>
 
@@ -45,7 +88,7 @@ function LandingPage() {
 
         <Row className="mb-5">
           <Col md={6}>
-            <img src={newestRecipe} alt="search pic"></img>
+            <img src={newestRecipe} className="pic100" alt="search pic"></img>
           </Col>
           <Col md={1}></Col>
           <Col md={5}>
@@ -67,29 +110,28 @@ function LandingPage() {
 
         <Row className="mb-4">
           <Col>
-            <img src={newestRecipe} alt="search pic"></img>
+            <img src={newestRecipe} className="pic100" alt="search pic"></img>
           </Col>
           <Col>
-            <img src={newestRecipe} alt="search pic"></img>
+            <img src={newestRecipe} className="pic100" alt="search pic"></img>
           </Col>
           <Col>
-            <img src={newestRecipe} alt="search pic"></img>
+            <img src={newestRecipe} className="pic100" alt="search pic"></img>
           </Col>
         </Row>
         <Row className="mb-4">
           <Col>
-            <img src={newestRecipe} alt="search pic"></img>
+            <img src={newestRecipe} className="pic100" alt="search pic"></img>
           </Col>
           <Col>
-            <img src={newestRecipe} alt="search pic"></img>
+            <img src={newestRecipe} className="pic100" alt="search pic"></img>
           </Col>
           <Col>
-            <img src={newestRecipe} alt="search pic"></img>
+            <img src={newestRecipe} className="pic100" alt="search pic"></img>
           </Col>
         </Row>
         <Row>
-        
-
+      
 
         {/* let active = 2;
         let items = [];
@@ -115,11 +157,10 @@ function LandingPage() {
 
         render(paginationBasic); */}
 
-
-
         </Row>
 
-      </Container>
+        <FooterTop />
+        <FooterBottom />
     </div>
   );
 }

@@ -1,9 +1,26 @@
 
 
 
-- Landing Page (new recipe, and 6 recipe with pagination), 
-- URL Params (Search, Sort, dan Pagination)
-- Hooks [function component, atomic design]
+- Kasaran untuk landing Page yang objektif dan styling
+
+- belum paham: 
+
+- react-api, okok
+- localStorage, okok
+
+redux(crud), 
+
+
+hoc, build n deploy
+
+- hook, atomic design (architectural pattern)
+- privately naviagtion
+- url params (Search, Sort, dan Pagination)
+
+- ENV
+
+
+
 
 ## Tugas Frontend dgn React 05 juli:
 - Melanjutkan program Backend Sebelumnya
@@ -36,14 +53,6 @@
 - Css design pakai react bootstrap atau bootstrap  
 
 (*)dijelaskan di kelas tambahan  
-
-
-
-
-
-
-
-
 
 
 

@@ -1,16 +1,17 @@
-// import './NewRecipe.css';
 import { 
-  Container, 
   Row, 
   Col, 
   Button, 
   Form,
 } from 'react-bootstrap';
+import NavbarPage from "../components/organism/NavbarPage";
+import FooterTop from "../components/organism/FooterTop";
+import FooterBottom from "../components/organism/FooterBottom";
 
 function NewRecipe() {
   return (
     <div className='NewRecipe'>
-      <Container>
+      <NavbarPage />
 
         <h1>Add New Recipe</h1>
         <Row className="mt-5">
@@ -37,7 +38,8 @@ function NewRecipe() {
           <Col></Col>
         </Row>
 
-      </Container>
+          <FooterTop />
+          <FooterBottom />
     </div>
   );
 }
