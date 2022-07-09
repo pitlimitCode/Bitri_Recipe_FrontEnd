@@ -7,16 +7,20 @@ import LoginForm from "../components/organism/LoginForm";
 
 function Login() {
   return (
-    <div className='login'>
-      <Row>
-        <Col>
+    <Row className='loginregister'>
+      <Col className="d-none d-md-block">
+        <div className="left">
           <LeftloginRegis />
-        </Col>
-        <Col>
-          <LoginForm />
-        </Col>
-      </Row>
-    </div>
+        </div>
+      </Col>
+      <Col sm={{ order: 'last' }} className="right">
+        <Row>
+          <Col></Col>
+          <Col xs={9}> <LoginForm /> </Col>
+          <Col></Col>
+        </Row>
+      </Col>
+    </Row>
   );
 }
 

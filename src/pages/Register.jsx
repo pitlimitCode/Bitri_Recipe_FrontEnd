@@ -1,17 +1,26 @@
 import {
   Row, 
+  Col,
 } from 'react-bootstrap';
 import LeftloginRegis from "../components/organism/LeftloginRegis";
 import RegisterForm from "../components/organism/RegisterForm";
 
 function Register() {
   return (
-    <div className='register'>
-      <Row>
+    <Row className='loginregister'>
+      <Col className="d-none d-md-block">
+        <div className="left">
           <LeftloginRegis />
-          <RegisterForm />
-      </Row>
-    </div>
+        </div>
+      </Col>
+      <Col sm={{ order: 'last' }} className="right">
+        <Row>
+          <Col></Col>
+          <Col xs={9}> <RegisterForm /> </Col>
+          <Col></Col>
+        </Row>
+      </Col>
+    </Row>
   );
 }
 

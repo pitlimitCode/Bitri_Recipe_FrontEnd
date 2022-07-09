@@ -10,7 +10,7 @@
 .App {
   text-align: center;
   /* background-color: gainsboro; */
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .button{
@@ -23,16 +23,56 @@
   text-align: left;
 }
 
-.left{
+.loginImage{
+  max-height: min-content;
+}
+
+.right{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color:brown; */
+}
+
+/* Left Background Login and Register START */
+.left {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid red; */
+}
+.imageParent {
+  /* position: relative; */
+  top: 0;
+  left: 0;
   width: 100%;
+  background-color:rgba(0,0,255,0.3);
+  backdrop-filter: blur(5px);
 }
+.imageChild {
+  position: absolute;
+  /* top: 200;
+  left: 200; */
+  width: 30%;
+  /* border: 1px solid red; */
+}
+/* Left Background Login and Register END */
+
 /* Form Login and Register START */
-.loginForm {
-  margin-top: 280px;
+.loginregister{
+  border: 1px solid red;
 }
-.registerForm {
-  margin-top: 200px;
-}
+/* .loginForm { */
+  /* vertical-align: center; */
+  /* position: absolute; */
+  /* margin-top: 300px; */
+/* } */
+/* .registerForm { */
+  /* position: absolute; */
+  /* margin-top: 200px; */
+/* } */
 .title{
   color: #EFC81A;
   text-align: center;

@@ -18,8 +18,8 @@ function NavbarPage() {
         </Navbar>
       </Col>
       <Col>
-        <Navbar bg="transparent" variant="light">
-          <Nav className="me-auto">
+        <Navbar bg="transparent" variant="light" className="justify-content-end">
+          <Nav className="justify-content-end">
             <Nav.Link nameClass="navlink" href="login">Login</Nav.Link>
             <Nav.Link nameClass="navlink" href="register">Register</Nav.Link>
           </Nav>
