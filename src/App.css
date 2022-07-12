@@ -111,9 +111,7 @@ h1{
   color: #2E266F;
 }
 
-.pic100{
-  max-width: 100%;
-}
+/* .pic100{ */
 
 h4{
   text-align: left;
@@ -155,8 +153,27 @@ h4{
 }
 /* Footer END */
 
+/* .landingPage{
+  background-color: #EFC81A;
+} */
 
 
+
+.pic100{
+  max-width: 100%;
+  min-width: 100%;
+}
+
+.parentImagePages {
+  position: relative;
+  text-align: center;
+  color: rgb(57, 50, 62);
+}
+.bottom-left-text {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
 
 
 

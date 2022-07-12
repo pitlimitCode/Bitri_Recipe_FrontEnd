@@ -1,6 +1,5 @@
 import './App.css';
 import { Routes, Route } from "react-router-dom";
-import { ProfileContext } from "./context";
 
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -13,10 +12,29 @@ import {
   Container, 
 } from 'react-bootstrap';
 
+import React from "react";
+import axios from "axios";
+
 export default function App() {
+  // console.log(localStorage.getItem("token"));
+  // console.log(localStorage.getItem("name"));
+
+  axios.interceptors.request.use(
+    function (config) {
+      if (localStorage.getItem("token")) {
+        config.headers = {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+          User_name: localStorage.getItem("name")
+        };
+      }
+      return config;
+    }
+  )
+
+      //  userActive: `${localStorage.getItem("token")}`
+
   return (
   <Container className="App">
-    <ProfileContext.Provider value={{ name: "PROFIL CONTEXT DI APP.JS" }}>
 
       {/* MAIN ROUTE */}
       <Routes>
@@ -25,11 +43,11 @@ export default function App() {
         <Route path="Register" element={<Register />} />
         <Route path="NewRecipe" element={<NewRecipe />} />
         <Route path="Profile" element={<Profile />} />
+        <Route link to="Profile/:id" element={<Profile />} />
         <Route path="DetailRecipe" element={<DetailRecipe />} />
         <Route path="*" element={<UrlNotFound />} />
       </Routes>
 
-    </ProfileContext.Provider>
   </Container>
   );
 }

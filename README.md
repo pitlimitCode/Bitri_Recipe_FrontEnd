@@ -1,26 +1,6 @@
 
-
-
-- Kasaran untuk landing Page yang objektif dan styling
-
-- belum paham: 
-
-- react-api, okok
-- localStorage, okok
-
-redux(crud), 
-
-
-hoc, build n deploy
-
-- hook, atomic design (architectural pattern)
-- privately naviagtion
-- url params (Search, Sort, dan Pagination)
-
-- ENV
-
-
-
+    - Redux
+    - HOC
 
 ## Tugas Frontend dgn React 05 juli:
 - Melanjutkan program Backend Sebelumnya
@@ -33,7 +13,7 @@ hoc, build n deploy
   - Detail recipe,
   - nambah recipe,
   - profile (foto, nama, resep yang udah dibuat)
-- localStorage (*)
+- localStorage
 - Redux (CRUD) & with file (*)
 - URL Params (Search, Sort, dan Pagination)
 - Build & Deploy (*)
@@ -57,6 +37,8 @@ hoc, build n deploy
 
 
 
+ISI TOKEN LOGIN MALAH INPUT BAHKAN YANG STATUS 400
+UBAH DATABASE PHONE NUMBER KAREN TIDAK BISA TERIMA NOMOR 12 DIGIT KEATAS
 
 
 # Getting Started with Create React App

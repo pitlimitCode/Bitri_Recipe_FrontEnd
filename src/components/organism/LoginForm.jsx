@@ -7,18 +7,18 @@ import React from "react";
 import axios from "axios";
 
 function LoginForm() {
-  const [isError, setIsError] = React.useState(false);
-  const [errorMsg, setErrorMsg] = React.useState("");
-
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
-  const [isLoading, setIsLoading] = React.useState(false);
-
   React.useEffect(() => {
     if (localStorage.getItem("token")) {
       window.location.href = "/";
     }
   }, []);
+
+  const [isError, setIsError] = React.useState(false);
+  const [errorMsg, setErrorMsg] = React.useState("");
+  const [isLoading, setIsLoading] = React.useState(false);
+
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
 
   const handleLogin = () => {
     setIsLoading(true);
@@ -31,10 +31,13 @@ function LoginForm() {
         setIsError(false);
 
       // SET TOKEN
-        localStorage.setItem("token", res?.data);
+        // JSON.parse(localStorage.setItem("token", res?.data.show.rows));
+        localStorage.setItem("token", res?.data?.token);
+        localStorage.setItem("name", res?.data?.name);
         window.location.href = "/";
       })
       .catch((err) => {
+        console.log(err);
         setIsError(true);
         setErrorMsg(err?.response?.data);
       })
@@ -85,4 +88,4 @@ function LoginForm() {
   )
 }
 
-export default LoginForm;
+export default LoginForm;;
