@@ -13,7 +13,7 @@ function FooterBottom() {
         </Col>
         <Col>
           <a className='footerP' href="https://camp.pijarmahir.id/class/fullstack-website-developer">
-            <strong>PijarCAmp</strong>
+            <strong>PijarCamp</strong>
           </a>
         </Col>
       </Row>

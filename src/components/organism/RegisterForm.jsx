@@ -20,7 +20,7 @@ function RegisterForm() {
   const handleRegister = () => {
     setIsLoading(true);
     axios
-      .post("http://localhost:8000/users/add", {
+      .post(process.env.REACT_APP_BE_URL + "users/add", {
         name: name,
         email: email,
         phone_number: phonenumber,

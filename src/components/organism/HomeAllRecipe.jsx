@@ -3,7 +3,8 @@ import axios from "axios";
 import {
   // Row,
   Col,
-  Image
+  Image,
+  Nav,
 } from 'react-bootstrap';
 
 // import newestRecipe from '../../assets/newestRecipe.png';
@@ -16,13 +17,13 @@ export default function HomeAllRecipe() {
 
   // const [isLoading, setIsLoading] = React.useState([]);
   const [listData, setListData] = React.useState([]);
-  // const [linkRecipe, setLinkRecipe] = React.useState([]);
+  const [linkRecipe, setLinkRecipe] = React.useState([]);
   React.useEffect(() => {
-    axios.get("http://localhost:8000/recipes/show/all")
+    axios.get(process.env.REACT_APP_BE_URL + "recipes/show/all")
       .then((res) => {
         // console.log(res.data.data);
         setListData(res.data.data);
-        // setLinkRecipe("" + res.data.data.id); // link ke detail recipe
+        setLinkRecipe("http://localhost:3000/detailrecipe/?id=");
 
       //   setTimeout(() => {
       //     setIsLoading(false);
@@ -52,10 +53,15 @@ export default function HomeAllRecipe() {
             </Col>
             ))} */}
           {listData.map(data => (
-            <Col xs={6} md={4} className ="parentImagePages mb-4" href="">
-              <Image src={data.image} className="picImagePages" alt="search pic" 
-                // onClick={linkRecipe}
-              />
+            <Col xs={6} md={4} className ="parentImagePages mb-4">
+              <Nav.Link 
+                href= 
+                  {linkRecipe} 
+                  // +
+                  // {data.id} 
+              >
+                <Image src={data.image} className="picImagePages" alt="search pic"/>
+              </Nav.Link>
               <div className="bottom-left-text">{data.name}</div>
             </Col>
             ))}

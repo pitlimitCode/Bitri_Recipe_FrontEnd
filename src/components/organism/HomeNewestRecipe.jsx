@@ -20,10 +20,10 @@ export default function HomeNewestRecipe() {
   const [imageUpdate, setImageUpdate] = React.useState([]);
   
   React.useEffect(() => {
-    axios.get("http://localhost:8000/recipes/show/new")
+    axios.get(process.env.REACT_APP_BE_URL + "recipes/show/new")
       .then((res) => {
         setidRecipe(res.data.data[0].id_recipe);
-        setUrl("http://localhost:8000/recipes/show/id?id=" + idRecipe);
+        setUrl("http://localhost:3000/detailrecipe/?id=" + idRecipe);
         setRecipe(res.data.data[0].name_recipe);
         setUser(res.data.data[0].name);
         setImageUpdate(res.data.data[0].image_recipe); /////
@@ -43,8 +43,6 @@ export default function HomeNewestRecipe() {
       })
   });
 
-  console.log(process.env.BE_URL);
-  
   return (
     //  {isLoading ? (
       

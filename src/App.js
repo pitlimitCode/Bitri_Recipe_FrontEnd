@@ -1,6 +1,3 @@
-// .env example: 
-// BE_URL="http://localhost:8000/"
-
 import './App.css';
 import { 
   Routes,
@@ -13,9 +10,8 @@ import Register from "./pages/Register";
 import LandingPage from "./pages/LandingPage";
 import NewRecipe from "./pages/NewRecipe";
 import Profile from "./pages/Profile";
-import ProfileId from "./pages/ProfileId";
 import DetailRecipe from "./pages/DetailRecipe";
-// import UrlNotFound from "./pages/urlNotFound";
+import UrlNotFound from "./pages/urlNotFound";
 import { 
   Container, 
 } from 'react-bootstrap';
@@ -23,9 +19,10 @@ import {
 import React from "react";
 import axios from "axios";
 
-// URL
-
 export default function App() {
+  // console.log(process.env);
+  // console.log(process.env.REACT_APP_BE_URL);
+
   // console.log(localStorage.getItem("token"));
 
   axios.interceptors.request.use(
@@ -54,9 +51,8 @@ export default function App() {
         <Route path="Register" element={<Register />} />
         <Route path="NewRecipe" element={<NewRecipe />} />
         <Route path="Profile" element={<Profile />} />
-        <Route path="profile/:id" component={<ProfileId />} />
-        <Route path="DetailRecipe" component={<DetailRecipe />} />
-        {/* <Route path="*" element={<UrlNotFound />} /> */}
+        <Route path="DetailRecipe" element={<DetailRecipe />} />
+        <Route path="*" element={<UrlNotFound />} />
       </Routes>
 
   </Container>

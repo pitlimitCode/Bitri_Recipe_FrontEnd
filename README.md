@@ -1,3 +1,7 @@
+.env example: 
+REACT_APP_BE_URL="http://localhost:8000/"
+
+
 - Redux,
 library untuk state management. memiliki 3 komponen utama: action, reducer, dan store. sifatnya seperti database yang dapat dipakai dalam frontend framework, fungsinya untuk operasi seperti query insert insert delete, dapat juga digunakan untuk logic seperti validasi, verifikasi, autorisasi. 
 

@@ -19,7 +19,7 @@ function NewRecipeForm() {
   const handleNewRecipe = () => {
     setIsLoading(true);
     axios
-      .post("http://localhost:8000/recipes/add", {
+      .post(process.env.REACT_APP_BE_URL + "recipes/add", {
         // image: image,
         name: title,
         ingredients: ingre,

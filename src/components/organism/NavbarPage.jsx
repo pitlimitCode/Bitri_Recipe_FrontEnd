@@ -20,10 +20,10 @@ function NavbarPage() {
   // }
 
   const handleToProfile = () => {
-    axios.get("http://localhost:8000/users/getid")
+    axios.get(process.env.REACT_APP_BE_URL + "users/getid")
       .then(res => {
         // console.log(res);
-        // console.log(res.data.id);
+        console.log(res.data.id);
 
         // if (res.reqsuest.response) {}
 

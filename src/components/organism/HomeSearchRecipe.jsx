@@ -13,7 +13,7 @@ export default function HomeSearchRecipe() {
   const [imageRandom, setImageRandom] = React.useState([]); /////
   
   React.useEffect(() => {
-    axios.get("http://localhost:8000/recipes/show/new") ///// ubah jadi random image
+    axios.get(process.env.REACT_APP_BE_URL + "recipes/show/new") ///// ubah jadi random image
       .then((res) => {
         setImageRandom(res.data.data[2].image_recipe);
       } )
@@ -22,7 +22,7 @@ export default function HomeSearchRecipe() {
 
   const [searching, setSearching] = React.useState([]);
   const linkToName = () => {
-    window.location.href = "http://localhost:8000/recipes/show/name?name=" + searching;
+    window.location.href = process.env.REACT_APP_BE_URL + "recipes/show/name?name=" + searching;
   };
 
   return (
