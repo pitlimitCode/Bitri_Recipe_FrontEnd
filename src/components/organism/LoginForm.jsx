@@ -6,13 +6,9 @@ import {
 import React from "react";
 import axios from "axios";
 
-function LoginForm() {
-  React.useEffect(() => {
-    if (localStorage.getItem("token")) {
-      window.location.href = "/";
-    }
-  }, []);
+// import {Navigate} from "react-router-dom"
 
+function LoginForm() {
   const [isError, setIsError] = React.useState(false);
   const [errorMsg, setErrorMsg] = React.useState("");
   const [isLoading, setIsLoading] = React.useState(false);
@@ -35,6 +31,7 @@ function LoginForm() {
         localStorage.setItem("token", res?.data?.token);
         localStorage.setItem("name", res?.data?.name);
         window.location.href = "/";
+        // <Navigate to="/" />
       })
       .catch((err) => {
         console.log(err);

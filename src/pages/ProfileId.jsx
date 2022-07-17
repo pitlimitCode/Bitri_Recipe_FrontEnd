@@ -9,7 +9,13 @@ import NavbarPage from "../components/organism/NavbarPage";
 import FooterBottom from "../components/organism/FooterBottom";
 import defaultAvatar from '../assets/defaultAvatar.jpg';
 
-export default function Profile() {
+import { useParams } from 'react-router-dom';
+
+
+export default function ProfileId() {
+  
+  let { id } = useParams();
+  let okeeeId = id;
   
   // const [idRecipe, setidRecipe] = React.useState([]);
   // const [url, setUrl] = React.useState([]);
@@ -45,7 +51,7 @@ export default function Profile() {
       {/* <img src={avatar} alt='user avatar' className="avatar"></img> */}
       <img src={defaultAvatar} alt='user avatar' className="avatar"></img>
       {/* <Image src={defaultAvatar} rounded ></Image> */}
-      <h5 className="mt-3">{localStorage.getItem("name")}</h5>
+      <h5 className="mt-3">{localStorage.getItem("name")} BERHASIL PARAMS BY ID {okeeeId}</h5>
       
         <Nav variant="tabs" defaultActiveKey="/home">
           <Nav.Item>

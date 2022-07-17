@@ -1,13 +1,21 @@
+// .env example: 
+// BE_URL="http://localhost:8000/"
+
 import './App.css';
-import { Routes, Route } from "react-router-dom";
+import { 
+  Routes,
+  Route,
+  // useParams ,
+} from 'react-router-dom';
 
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import LandingPage from "./pages/LandingPage";
 import NewRecipe from "./pages/NewRecipe";
 import Profile from "./pages/Profile";
+import ProfileId from "./pages/ProfileId";
 import DetailRecipe from "./pages/DetailRecipe";
-import UrlNotFound from "./pages/urlNotFound";
+// import UrlNotFound from "./pages/urlNotFound";
 import { 
   Container, 
 } from 'react-bootstrap';
@@ -15,9 +23,10 @@ import {
 import React from "react";
 import axios from "axios";
 
+// URL
+
 export default function App() {
   // console.log(localStorage.getItem("token"));
-  // console.log(localStorage.getItem("name"));
 
   axios.interceptors.request.use(
     function (config) {
@@ -30,8 +39,10 @@ export default function App() {
       return config;
     }
   )
+  // let { userId } = useParams();
+  // console.log(useParams());
 
-      //  userActive: `${localStorage.getItem("token")}`
+  //  userActive: `${localStorage.getItem("token")}`
 
   return (
   <Container className="App">
@@ -43,9 +54,9 @@ export default function App() {
         <Route path="Register" element={<Register />} />
         <Route path="NewRecipe" element={<NewRecipe />} />
         <Route path="Profile" element={<Profile />} />
-        <Route link to="Profile/:id" element={<Profile />} />
-        <Route path="DetailRecipe" element={<DetailRecipe />} />
-        <Route path="*" element={<UrlNotFound />} />
+        <Route path="profile/:id" component={<ProfileId />} />
+        <Route path="DetailRecipe" component={<DetailRecipe />} />
+        {/* <Route path="*" element={<UrlNotFound />} /> */}
       </Routes>
 
   </Container>

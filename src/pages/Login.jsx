@@ -2,6 +2,7 @@ import {
   Row,
   Col,
 } from 'react-bootstrap';
+
 import LeftloginRegis from "../components/organism/LeftloginRegis";
 import LoginForm from "../components/organism/LoginForm";
 

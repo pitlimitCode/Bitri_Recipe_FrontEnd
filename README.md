@@ -1,6 +1,39 @@
+- Redux,
+library untuk state management. memiliki 3 komponen utama: action, reducer, dan store. sifatnya seperti database yang dapat dipakai dalam frontend framework, fungsinya untuk operasi seperti query insert insert delete, dapat juga digunakan untuk logic seperti validasi, verifikasi, autorisasi. 
 
-    - Redux
-    - HOC
+- HOC [High Order Component] ,
+teknik yang lebih lanjut (di React) untuk logic penggunaan komponen, umumnya digunakan bersamaan dengan aplikasi pihak ketiga seperti Redux dan Relay.
+
+
+registerform
+loginform
+app.js
+
+
+
+register same email
+logout
+login
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Tugas Frontend dgn React 05 juli:
 - Melanjutkan program Backend Sebelumnya

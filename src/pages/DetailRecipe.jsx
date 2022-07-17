@@ -4,10 +4,10 @@ import {
   Button, 
   Form,
 } from 'react-bootstrap';
+import defaultDetailRecipe from '../assets/defaultDetailRecipe.png';
 import NavbarPage from "../components/organism/NavbarPage";
 import FooterTop from "../components/organism/FooterTop";
 import FooterBottom from "../components/organism/FooterBottom";
-import defaultDetailRecipe from '../assets/defaultDetailRecipe.png';
 
 function DetailRecipe() {
   return (
@@ -27,7 +27,7 @@ function DetailRecipe() {
 
             <Form>
               <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                <Form.Control as="textarea" placeholder="Steps" rows={5} />
+                <Form.Control as="textarea" placeholder="Comment here . . ." rows={5} />
               </Form.Group>
               <Button variant="primary" type="submit" className="button">
                 Submit

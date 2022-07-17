@@ -4,31 +4,45 @@ import {
 } from 'react-bootstrap';
 import React from "react";
 import axios from "axios";
-// import HomeSearchRecipe from './HomeSearchRecipe';
 
 function NavbarPage() {
-
-  const handleToProfile = () => {
-    axios.get("http://localhost:8000/users/getid")
-      .then(res => {
-        console.log(res.data);
-        window.location.href = "http://localhost:8000/users/show/id?id=" + res.data.id;
-      })
-      .catch(err => console.log(err))
-  }
-
-  // Remove data at local storage, because Log Out
+  // Log Out = Remove data in local storage.
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("name");
     window.location.href = "/login";
   };
 
+  // Link to self user profile
+
+  // const activeToken = () => {
+  // Error verify type: jwt expired.  
+  // }
+
+  const handleToProfile = () => {
+    axios.get("http://localhost:8000/users/getid")
+      .then(res => {
+        // console.log(res);
+        // console.log(res.data.id);
+
+        // if (res.reqsuest.response) {}
+
+        // window.location.href = "http://localhost:8000/users/show/id?id=" + res.data.id;
+        window.location.href = "http://localhost:3000/profile/?id=" + res.data.id;
+      })
+      .catch(err => {
+        console.log(err.headers.request.response);
+        // console.log(err)
+      })
+  }
 
   var nameProfile = [];
   var rightNavbar = [];
   if (localStorage.getItem("name")) { 
-    nameProfile.push( <Nav.Link nameClass="navlink" onClick={handleToProfile}>
+    nameProfile.push( <Nav.Link nameClass="navlink" 
+                        // href="profile"
+                        onClick={handleToProfile} ////////////////////
+                      >
                         Welcome, {localStorage.getItem("name")}.
                       </Nav.Link>);
     rightNavbar.push(<Nav.Link nameClass="navlink" onClick={handleLogout}>Logout</Nav.Link>);

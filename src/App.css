@@ -35,6 +35,7 @@
   /* background-color:brown; */
 }
 
+
 /* Left Background Login and Register START */
 .left {
   position: relative;
@@ -60,10 +61,11 @@
 }
 /* Left Background Login and Register END */
 
+
 /* Form Login and Register START */
-.loginregister{
+/* .loginregister{
   border: 1px solid red;
-}
+} */
 /* .loginForm { */
   /* vertical-align: center; */
   /* position: absolute; */
@@ -106,17 +108,16 @@
 }
 /* Form Login and Register END */
 
+
 h1{
   font-size: 30px;
   color: #2E266F;
+  font-weight: bold;
 }
-
-/* .pic100{ */
 
 h4{
   text-align: left;
-  /* margin-top: 200px;
-  margin-bottom: 100px; */
+  color: #2E266F;
 }
 
 .centering{
@@ -138,6 +139,91 @@ h4{
   border-radius: 50%;
 }
 
+/* Image{
+} */
+
+/* Home Page START */
+.parentImagePages {
+  position: relative;
+  /* border: 1px solid black; */
+}
+.pic100{
+  border-radius: 20px;
+  width: 100%;
+  border: 4px solid #EFC81A;
+  overflow: hidden;
+  /* height:fit-content; */
+}
+.picImagePages{
+  border-radius: 20px;
+  width: 100%;
+}
+.bottom-left-text {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  color: #2e266f;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 576px) {
+  .picImagePages{
+    max-height: 240px;
+    border: 2px solid #EFC81A;
+  }
+  .bottom-left-text {
+    font-size: 0px;
+  }
+}
+@media screen and (min-width: 576px) {
+  .picImagePages{
+    max-height: 240px;
+    border: 2px solid #EFC81A;
+  }
+  .bottom-left-text {
+    background-color: rgba(239, 200, 26, 0.4);
+    border-radius: 20px;
+    font-size: 18px;
+    width: 50%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .picImagePages {
+    border-radius: 20px;
+    max-height: 210px;
+  }
+  .bottom-left-text {
+    text-overflow: none;
+  }
+}
+@media screen and (min-width: 992px) {
+  .picImagePages {
+    max-height: 290px;
+  }
+  .bottom-left-text {
+    font-size: 22px;
+    background-color: rgba(239, 200, 26, 0);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .picImagePages {
+    max-height: 355px;
+  }
+  .bottom-left-text {
+    font-size: 22px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .picImagePages {
+    max-height: 410px;
+  }
+  .bottom-left-text {
+    font-size: 12px;
+  }
+}
+/* Home Page END */
+
+
 /* Footer START */
 .footerTop{
   margin-top: 50px;
@@ -153,32 +239,11 @@ h4{
 }
 /* Footer END */
 
-/* .landingPage{
-  background-color: #EFC81A;
-} */
-
-
-
-.pic100{
-  max-width: 100%;
-  min-width: 100%;
-}
-
-.parentImagePages {
-  position: relative;
-  text-align: center;
-  color: rgb(57, 50, 62);
-}
-.bottom-left-text {
-  position: absolute;
-  bottom: 8px;
-  left: 16px;
-}
 
 
 
 
-
+/* React Default CSS */
 .App-logo {
   height: 40vmin;
   pointer-events: none;

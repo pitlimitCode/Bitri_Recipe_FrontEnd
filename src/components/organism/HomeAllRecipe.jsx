@@ -6,9 +6,7 @@ import {
   Image
 } from 'react-bootstrap';
 
-
 // import newestRecipe from '../../assets/newestRecipe.png';
-
 
 export default function HomeAllRecipe() {
 
@@ -18,11 +16,14 @@ export default function HomeAllRecipe() {
 
   // const [isLoading, setIsLoading] = React.useState([]);
   const [listData, setListData] = React.useState([]);
+  // const [linkRecipe, setLinkRecipe] = React.useState([]);
   React.useEffect(() => {
     axios.get("http://localhost:8000/recipes/show/all")
       .then((res) => {
         // console.log(res.data.data);
         setListData(res.data.data);
+        // setLinkRecipe("" + res.data.data.id); // link ke detail recipe
+
       //   setTimeout(() => {
       //     setIsLoading(false);
       //   }, 10000);
@@ -51,27 +52,29 @@ export default function HomeAllRecipe() {
             </Col>
             ))} */}
           {listData.map(data => (
-            <Col md={4} className ="parentImagePages">
-              <Image src={data.image} className="pic100" alt="search pic" />
-              <div className="bottom-left-text">{data.name} </div>
+            <Col xs={6} md={4} className ="parentImagePages mb-4" href="">
+              <Image src={data.image} className="picImagePages" alt="search pic" 
+                // onClick={linkRecipe}
+              />
+              <div className="bottom-left-text">{data.name}</div>
             </Col>
             ))}
           </>
         {/* )} */}
 
 
-      {/* <Col md={4} className ="parentImagePages">
-        <Image src={newestRecipe} className="pic100" alt="Recipe on Pagination" />
-        <div className="bottom-left-text">NAMA RESEPP</div>
-      </Col>
-      <Col md={4} className ="parentImagePages">
-        <Image src={newestRecipe} className="pic100" alt="search pic" />
-        <div className="bottom-left-text">NAMA RESEPP</div>
-      </Col>
-      <Col md={4} className ="parentImagePages">
-        <Image src={newestRecipe} className="pic100" alt="search pic" />
-        <div className="bottom-left-text">NAMA RESEPP</div>
-      </Col> */}
+        {/* <Col md={4} className ="parentImagePages">
+          <Image src={newestRecipe} className="pic100" alt="Recipe on Pagination" />
+          <div className="bottom-left-text">NAMA RESEPP</div>
+        </Col>
+        <Col md={4} className ="parentImagePages">
+          <Image src={newestRecipe} className="pic100" alt="search pic" />
+          <div className="bottom-left-text">NAMA RESEPP</div>
+        </Col>
+        <Col md={4} className ="parentImagePages">
+          <Image src={newestRecipe} className="pic100" alt="search pic" />
+          <div className="bottom-left-text">NAMA RESEPP</div>
+        </Col> */}
 
       {/* </Row>  */}
     </>

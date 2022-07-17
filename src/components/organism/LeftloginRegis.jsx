@@ -3,8 +3,16 @@ import defaultAvatar from '../../assets/defaultAvatar.jpg';
 import {
   Image,
 } from 'react-bootstrap';
+import React from "react";
 
 export default function LeftloginRegis() {
+  
+  React.useEffect(() => {
+    if (localStorage.getItem("token")) {
+      window.location.href = "/";
+    }
+  }, []);
+  
   // return (
   //   <>
   //     {/* <a href="/"> */}

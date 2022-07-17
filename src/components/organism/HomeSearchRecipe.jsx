@@ -2,12 +2,24 @@ import {
   Col, 
   Button, 
   Form,
+  Image,
 } from 'react-bootstrap';
 
 import React from "react";
-import searchImage from '../../assets/searchImage.png';
+import axios from "axios";
+// import searchImage from '../../assets/searchImage.png';
 
 export default function HomeSearchRecipe() {
+  const [imageRandom, setImageRandom] = React.useState([]); /////
+  
+  React.useEffect(() => {
+    axios.get("http://localhost:8000/recipes/show/new") ///// ubah jadi random image
+      .then((res) => {
+        setImageRandom(res.data.data[2].image_recipe);
+      } )
+      .catch((err) => {console.log(err)})
+  });
+
   const [searching, setSearching] = React.useState([]);
   const linkToName = () => {
     window.location.href = "http://localhost:8000/recipes/show/name?name=" + searching;
@@ -16,7 +28,6 @@ export default function HomeSearchRecipe() {
   return (
     <>
       <Col md={5}>
-
         <div className='centering textLeft'>
           <h1 className='textLeft'>Discover Recipe</h1>
           <h1 className='textLeft'>& Delicious Food</h1>
@@ -36,13 +47,9 @@ export default function HomeSearchRecipe() {
           </Form>
         </div>
       </Col>
-
-      <Col md={1}>
-        {/* <h1>{recipeData}</h1> */}
-      </Col>
-
+      <Col md={1}></Col>
       <Col md={6}>
-        <img src={searchImage} className="pic100" alt="search pic"></img>
+          <Image src={imageRandom} className="pic100" alt="search pic" />
       </Col>
     </>
   );

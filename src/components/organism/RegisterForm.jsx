@@ -7,12 +7,6 @@ import React from "react";
 import axios from "axios";
 
 function RegisterForm() {
-  React.useEffect(() => {
-    if (localStorage.getItem("token")) {
-      window.location.href = "/";
-    }
-  }, []);
-  
   const [isError, setIsError] = React.useState(false);
   const [errorMsg, setErrorMsg] = React.useState("");
   const [isLoading, setIsLoading] = React.useState(false);
