@@ -58,7 +58,7 @@ function NavbarPage() {
       <Navbar bg="transparent" variant="light">
         <Nav className="me-auto">
           <Nav.Link nameClass="navlink" href="/">Home</Nav.Link>
-          <Nav.Link nameClass="navlink" href="newrecipe">Add Recipe</Nav.Link>
+          <Nav.Link nameClass="navlink" href="/newrecipe">Add Recipe</Nav.Link>
           {nameProfile} 
         </Nav>
         <Nav>

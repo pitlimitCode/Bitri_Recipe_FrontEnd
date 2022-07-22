@@ -58,7 +58,7 @@ export default function HomeAllRecipe() {
                 href= 
                   {linkRecipe} 
                   // +
-                  // {data.id} 
+                  // {data.id} // tidak bisa ada tambahan variabel di href
               >
                 <Image src={data.image} className="picImagePages" alt="search pic"/>
               </Nav.Link>

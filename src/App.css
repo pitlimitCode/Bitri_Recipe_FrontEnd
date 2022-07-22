@@ -126,7 +126,9 @@ h4{
 }
 
 .detailRecipeImage{
-  width: 100%;
+  max-width: 100%;
+  max-height: 400px;
+  border-radius: 10px
 }
 
 .mb-3{

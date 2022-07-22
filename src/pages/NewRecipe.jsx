@@ -19,7 +19,7 @@ function NewRecipe() {
   return (
     <div className='NewRecipe'>
       <NavbarPage />
-      <h1 className="mb-5">Add YourNew Recipe</h1>
+      <h1 className="mb-5">Add Your New Recipe</h1>
       <Row className="mt-5">
         <Col></Col>
         <Col md={10}>

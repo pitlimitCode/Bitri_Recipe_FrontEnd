@@ -20,12 +20,6 @@ import {
 import React from "react";
 import axios from "axios";
 
-import ProfileJobseeker from "./teamWork/ProfileJobseeker";
-import Porto from "./teamWork/TabPorto";
-import JobsExp from "./teamWork/TabJobsExp";
-import EditProfileJobseeker from "./teamWork/EditProfileJobseeker";
-
-
 export default function App() {
   // console.log(process.env);
   // console.log(process.env.REACT_APP_BE_URL);
