@@ -60,13 +60,6 @@ export default function App() {
         <Route path="Profile" element={<Profile />} />
         <Route path="DetailRecipe" element={<DetailRecipe />} />
         <Route path="*" element={<UrlNotFound />} />
-        
-        {/* <Route path="/" element={<Home />} /> */}
-        <Route path="ProfileJobseeker" element={<ProfileJobseeker />} />
-        <Route path="Porto" element={<Porto />} />
-        <Route path="JobsExp" element={<JobsExp />} />
-        <Route path="EditProfileJobseeker" element={<EditProfileJobseeker />} />
-      
       </Routes>
 
   </Container>
