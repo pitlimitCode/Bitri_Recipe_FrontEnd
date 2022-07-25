@@ -1,5 +1,5 @@
 {
-  "name": "baruuu",
+  "name": "bitri-recipe-fe",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "eslint": "^8.20.0",
     "eslint-plugin-react": "^7.30.1"
   }
 }

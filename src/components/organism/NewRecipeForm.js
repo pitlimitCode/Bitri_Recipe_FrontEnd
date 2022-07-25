@@ -25,10 +25,10 @@ function NewRecipeForm() {
         ingredients: ingre,
         step: steps,
       })
-      .then((res) => {
-        setIsError(false);
-        window.location.href = "/";
-      })
+      // .then((res) => {
+      //   setIsError(false);
+      //   window.location.href = "/";
+      // })
       .catch((err) => {
         setIsError(true);
         setErrorMsg(err?.response?.data);

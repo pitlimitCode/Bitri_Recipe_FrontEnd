@@ -1,13 +1,15 @@
 import {
-  Row,
+  Row, 
   Col,
 } from 'react-bootstrap';
+import React from "react";
 
 import LeftloginRegis from "../components/organism/LeftloginRegis";
-import LoginForm from "../components/organism/LoginForm";
+import RegisterForm from "../components/organism/RegisterForm";
 
-function Login() {
+function Register() {
   return (
+    <>
     <Row className='loginregister'>
       <Col className="d-none d-md-block">
         <div className="left">
@@ -17,12 +19,13 @@ function Login() {
       <Col sm={{ order: 'last' }} className="right">
         <Row>
           <Col></Col>
-          <Col xs={9}> <LoginForm /> </Col>
+          <Col xs={9}> <RegisterForm /> </Col>
           <Col></Col>
         </Row>
       </Col>
     </Row>
+    </>
   );
 }
 
-export default Login;
+export default Register;

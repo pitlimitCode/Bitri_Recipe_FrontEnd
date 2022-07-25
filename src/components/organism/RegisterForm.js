@@ -46,6 +46,7 @@ function RegisterForm() {
   };
 
   return (
+    <>
       <Form className='registerForm'>
         <p className='title'>Let’s Get Started !!!</p>
         <p className='descForm'>Create New Account</p>
@@ -106,6 +107,7 @@ function RegisterForm() {
         <p className='descBottomForm'>Already have account? <a className="yellowIt" href="login">Log in Here</a></p>
 
       </Form>
+      </>
   );
 }
 

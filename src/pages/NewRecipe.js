@@ -17,6 +17,7 @@ function NewRecipe() {
   }, []);
   
   return (
+    <>
     <div className='NewRecipe'>
       <NavbarPage />
       <h1 className="mb-5">Add Your New Recipe</h1>
@@ -30,6 +31,7 @@ function NewRecipe() {
       <FooterTop />
       <FooterBottom />
     </div>
+    </>
   );
 }
 

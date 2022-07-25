@@ -53,7 +53,7 @@ export default function HomeAllRecipe() {
             </Col>
             ))} */}
           {listData.map(data => (
-            <Col xs={6} md={4} className ="parentImagePages mb-4">
+            <Col key={data.id} xs={6} md={4} className ="parentImagePages mb-4">
               <Nav.Link 
                 href= 
                   {linkRecipe} 
