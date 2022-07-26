@@ -1,19 +1,21 @@
 import {
+  Container,
   Row, 
   Col,
 } from 'react-bootstrap';
 import React from "react";
 
-import LeftloginRegis from "../components/organism/LeftloginRegis";
+import AuthLeft from "../components/organism/AuthLeft";
 import RegisterForm from "../components/organism/RegisterForm";
 
 function Register() {
   return (
     <>
+    <Container>
     <Row className='loginregister'>
       <Col className="d-none d-md-block">
         <div className="left">
-          <LeftloginRegis />
+          <AuthLeft />
         </div>
       </Col>
       <Col sm={{ order: 'last' }} className="right">
@@ -24,6 +26,7 @@ function Register() {
         </Row>
       </Col>
     </Row>
+    </Container>
     </>
   );
 }

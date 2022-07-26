@@ -1,5 +1,5 @@
-import loginImage from '../../assets/loginImage.png';
-import defaultAvatar from '../../assets/defaultAvatar.jpg';
+import authImage from '../../assets/default/authImage.png';
+import barberqueLogo from '../../assets/default/barberqueLogo.png';
 import {
   Image,
 } from 'react-bootstrap';
@@ -16,7 +16,7 @@ export default function LeftloginRegis() {
   // return (
   //   <>
   //     {/* <a href="/"> */}
-  //       <Image src={loginImage} className="img-fluid" alt="loginImage" />
+  //       <Image src={authImage} className="img-fluid" alt="authImage" />
   //     {/* </a> */}
       
   //     <div className='mask' style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}>
@@ -28,8 +28,8 @@ export default function LeftloginRegis() {
   // );
   return (
     <>
-      <a href="/"><Image className="imageParent" src={loginImage} alt="backgroundImage"/></a>
-      <Image className="imageChild" src={defaultAvatar} alt="logoImage"/>
+      <a href="/"><Image className="imageParent" src={authImage} alt="backgroundImage"/></a>
+      <Image className="imageChild" src={barberqueLogo} alt="logoImage"/>
     </>
   );
 }

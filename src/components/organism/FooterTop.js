@@ -7,7 +7,7 @@ import React from "react";
 function FooterTop() {
   return (
     <>
-    <Row className='footerTop'>
+    <Row className='bgYellow mt-5'>
       <Row className='pt-5'>
         <Col></Col>
         <Col className="mb-5">

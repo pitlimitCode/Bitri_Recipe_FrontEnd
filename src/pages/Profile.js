@@ -9,7 +9,7 @@ import axios from "axios";
 import NavbarPage from "../components/organism/NavbarPage";
 import FooterBottom from "../components/organism/FooterBottom";
 
-import defaultAvatar from '../assets/defaultAvatar.jpg';
+import avatarUser from '../assets/default/avatar.jpg';
 
 import { useLocation } from 'react-router-dom';
 
@@ -21,7 +21,7 @@ export default function Profile() {
   
   const [userName, setUserName] = React.useState("");
   const [avatar, setAvatar] = React.useState("");
-  let showAvatar = defaultAvatar;
+  let showAvatar = avatar;
 
   React.useEffect(() => {
     axios.get(process.env.REACT_APP_BE_URL + "users/show/id?id=" + id)
@@ -36,8 +36,8 @@ export default function Profile() {
     
     // console.log(showAvatar);
     // console.log(avatar);
-    if(avatar){
-      showAvatar = avatar;
+    if(avatarUser){
+      showAvatar = avatarUser;
     }
 
   return (

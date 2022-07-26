@@ -6,19 +6,19 @@ import {
 } from 'react-bootstrap';
 
 import React from "react";
-import axios from "axios";
-// import searchImage from '../../assets/searchImage.png';
+// import axios from "axios";
+import searchRecipe from '../../../assets/default/searchRecipe.png';
 
 export default function HomeSearchRecipe() {
-  const [imageRandom, setImageRandom] = React.useState([]); /////
+  // const [imageRandom, setImageRandom] = React.useState([]); /////
   
-  React.useEffect(() => {
-    axios.get(process.env.REACT_APP_BE_URL + "recipes/show/new") ///// ubah jadi random image
-      .then((res) => {
-        setImageRandom(res.data.data[2].image_recipe);
-      } )
-      .catch((err) => {console.log(err)})
-  });
+  // React.useEffect(() => {
+  //   axios.get(process.env.REACT_APP_BE_URL + "recipes/show/new") ///// ubah jadi random image
+  //     .then((res) => {
+  //       setImageRandom(res.data.data[2].image_recipe);
+  //     } )
+  //     .catch((err) => {console.log(err)})
+  // });
 
   const [searching, setSearching] = React.useState([]);
   const linkToName = () => {
@@ -49,7 +49,7 @@ export default function HomeSearchRecipe() {
       </Col>
       <Col md={1}></Col>
       <Col md={6}>
-          <Image src={imageRandom} className="pic100" alt="search pic" />
+          <Image src={searchRecipe} className="pic100" alt="search pic" />
       </Col>
     </>
   );

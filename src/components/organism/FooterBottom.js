@@ -1,4 +1,5 @@
 import {
+  Container,
   Row,
   Col,
 } from 'react-bootstrap';
@@ -6,8 +7,8 @@ import React from "react";
 
 function FooterBottom() {
   return (
-    < >
-    <Row className='footerBottom'>
+    <div className='bgYellow'>
+      <Container>
       <Row className='pb-2'>
         <Col></Col>
         <Col>
@@ -19,8 +20,8 @@ function FooterBottom() {
           </a>
         </Col>
       </Row>
-    </Row>
-    </>
+    </Container>
+    </div>
   );
 }
 

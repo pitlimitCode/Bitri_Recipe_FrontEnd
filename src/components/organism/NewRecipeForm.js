@@ -52,15 +52,25 @@ function NewRecipeForm() {
             // onChange={(e) => setImage(e.target.value)} 
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-          <Form.Control type="name" placeholder="Title of Recipe" onChange={(e) => setTitle(e.target.value)} />
+
+        <Form.Group className="mb-3"controlId="exampleForm.ControlTextarea1">
+          <Form.Control type="name" placeholder="Title of Recipe" 
+            onChange={(e) => setTitle(e.target.value)} 
+          />
         </Form.Group>
+
         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-          <Form.Control as="textarea" placeholder="Ingredients" rows={6} onChange={(e) => setIngre(e.target.value)}/>
+          <Form.Control as="textarea" placeholder="Ingredients" rows={6} 
+            onChange={(e) => setIngre(e.target.value)}
+          />
         </Form.Group>
+
         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-          <Form.Control as="textarea" placeholder="Steps" rows={5} onChange={(e) => setSteps(e.target.value)}/>
+          <Form.Control as="textarea" placeholder="Steps" rows={5} 
+            onChange={(e) => setSteps(e.target.value)}
+          />
         </Form.Group>
+
         <Button 
           variant="primary" 
           type="submit" 

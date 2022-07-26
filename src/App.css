@@ -1,20 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap'); /* font-family: 'inter'; */
 *{
   font-family: 'inter';
- /*  */
+  /* background-color: antiquewhite; */
 }
+:root {
+  --theme-color: #EFC81A; /* var(--theme-color). Figma origin color = #EFC81A */
+  --main-text-color: #2E266F; /* var(--main-text-color). Figma origin color = #2E266F*/ 
+}
+/* saran, theme color = #6C241C */
+/* saran, main text color = #--- */
 
-.yellowIt{
-  color: #EFC81A;
+.bg1{
+  background-color: var(--theme-color);
+}
+.yellowIt{ /* coloring text */
+  color: var(--theme-color);
 }
 .App {
   text-align: center;
-  /* background-color: gainsboro; */
+  background-color:aquamarine;
   /* border: 1px solid red; */
 }
+.bgbg{ /* for test the part of backgound division */
+  background-color: red;
+}
+
 
 .button{
-  background-color: #EFC81A;
+  background-color: var(--theme-color);
   border: none;
   color: white;
 }
@@ -76,7 +89,7 @@
   /* margin-top: 200px; */
 /* } */
 .title{
-  color: #EFC81A;
+  color: var(--theme-color);
   text-align: center;
   font-size: 30px;
   font-weight: 700;
@@ -117,7 +130,7 @@ h1{
 
 h4{
   text-align: left;
-  color: #2E266F;
+  color: var(--main-text-color);
 }
 
 .centering{
@@ -152,7 +165,7 @@ h4{
 .pic100{
   border-radius: 20px;
   width: 100%;
-  border: 4px solid #EFC81A;
+  border: 4px solid var(--theme-color);
   overflow: hidden;
   /* height:fit-content; */
 }
@@ -164,14 +177,14 @@ h4{
   position: absolute;
   bottom: 8px;
   left: 16px;
-  color: #2e266f;
+  color: var(--main-text-color);
   font-weight: bold;
 }
 
 @media screen and (max-width: 576px) {
   .picImagePages{
     max-height: 240px;
-    border: 2px solid #EFC81A;
+    border: 2px solid var(--theme-color);
   }
   .bottom-left-text {
     font-size: 0px;
@@ -180,7 +193,7 @@ h4{
 @media screen and (min-width: 576px) {
   .picImagePages{
     max-height: 240px;
-    border: 2px solid #EFC81A;
+    border: 2px solid var(--theme-color);
   }
   .bottom-left-text {
     background-color: rgba(239, 200, 26, 0.4);
@@ -228,12 +241,8 @@ h4{
 
 
 /* Footer START */
-.footerTop{
-  margin-top: 50px;
-  background-color: #EFC81A;
-}
-.footerBottom{
-  background-color: #EFC81A;
+.bgYellow{
+  background-color: var(--theme-color);
 }
 .footerP{
   font-size: 10px;

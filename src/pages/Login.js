@@ -4,7 +4,7 @@ import {
 } from 'react-bootstrap';
 import React from "react";
 
-import LeftloginRegis from "../components/organism/LeftloginRegis";
+import AuthLeft from "../components/organism/AuthLeft";
 import LoginForm from "../components/organism/LoginForm";
 
 function Login() {
@@ -13,7 +13,7 @@ function Login() {
     <Row className='loginregister'>
       <Col className="d-none d-md-block">
         <div className="left">
-          <LeftloginRegis />
+          <AuthLeft />
         </div>
       </Col>
       <Col sm={{ order: 'last' }} className="right">

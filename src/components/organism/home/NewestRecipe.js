@@ -6,27 +6,27 @@ import {
 import React from "react";
 import axios from "axios";
 
-// import newestRecipe from "../../assets/newestRecipe.png";
-// import qwerty from "../../../../Bitri_Recipe_Web/images/food_images/foodImage_7.jpeg";
+import newestRecipe from "../../../assets/default/newestRecipe.png";
 
 export default function HomeNewestRecipe() {
   // const [listPhoto, setListPhoto] = React.useState([]);
   // const [isLoading, setIsLoading] = React.useState([]);
   
-  const [idRecipe, setidRecipe] = React.useState([]);
-  const [url, setUrl] = React.useState([]);
+  // const [idRecipe, setidRecipe] = React.useState([]);
+  // const [url, setUrl] = React.useState([]);
   const [recipe, setRecipe] = React.useState([]);
   const [user, setUser] = React.useState([]);
-  const [imageUpdate, setImageUpdate] = React.useState([]);
+  // const [imageUpdate, setImageUpdate] = React.useState([]);
   
   React.useEffect(() => {
     axios.get(process.env.REACT_APP_BE_URL + "recipes/show/new")
       .then((res) => {
-        setidRecipe(res.data.data[0].id_recipe);
-        setUrl("http://localhost:3000/detailrecipe/?id=" + idRecipe);
+        // setidRecipe(res.data.data[0].id_recipe);
+        // setUrl("http://localhost:3000/detailrecipe/?id=" + idRecipe);
+        // setUrl("http://localhost:3000/detailrecipe/");
         setRecipe(res.data.data[0].name_recipe);
         setUser(res.data.data[0].name);
-        setImageUpdate(res.data.data[0].image_recipe); /////
+        // setImageUpdate(res.data.data[0].image_recipe); /////
 
         // console.log(res.data.data[0]);
         // console.log(res.data.data[1].image_recipe);
@@ -65,7 +65,7 @@ export default function HomeNewestRecipe() {
 
     <>
       <Col md={6}>
-        <Image src={imageUpdate} className="pic100" alt="search pic" />
+        <Image src={newestRecipe} className="pic100" alt="search pic" />
       </Col>
 
       <Col md={1}></Col>
@@ -77,7 +77,7 @@ export default function HomeNewestRecipe() {
             variant="primary"
             type="submit"
             className="button"
-            href={url}
+            href="http://localhost:3000/detailrecipe/"
           >
             Learn More
           </Button>

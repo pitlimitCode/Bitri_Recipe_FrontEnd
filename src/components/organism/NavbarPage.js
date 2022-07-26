@@ -1,4 +1,5 @@
 import {
+  Container,
   Navbar, 
   Nav, 
 } from 'react-bootstrap';
@@ -54,7 +55,8 @@ function NavbarPage() {
   }
 
   return (
-    <>
+    <div className="bgYellow">
+      <Container>
       <Navbar bg="transparent" variant="light">
         <Nav className="me-auto">
           <Nav.Link nameClass="navlink" href="/">Home</Nav.Link>
@@ -65,7 +67,8 @@ function NavbarPage() {
           {rightNavbar}
         </Nav>
       </Navbar>
-    </>
+      </Container>
+    </div>
   );
 }
 

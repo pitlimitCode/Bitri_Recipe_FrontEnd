@@ -1,4 +1,5 @@
 import { 
+  Container,
   Row, 
   Col, 
   Button, 
@@ -12,7 +13,7 @@ import NavbarPage from "../components/organism/NavbarPage";
 import FooterTop from "../components/organism/FooterTop";
 import FooterBottom from "../components/organism/FooterBottom";
 
-import defaultDetailRecipe from '../assets/defaultDetailRecipe.png';
+import defaultDetailRecipe from '../assets/default/detailRecipe.png';
 
 import { useLocation } from 'react-router-dom';
 
@@ -51,44 +52,43 @@ export default function DetailRecipe() {
     }
 
   return (
-    <div className='detailRecipe'>
+    <>
       <NavbarPage />
-      
-        <Row>
-          <Col></Col>
-          <Col md={9}>
-            <h1 className="mb-5 mt-3">{recipeName}</h1>
-            <img src={showImageRecipe} alt="recipe pic" className="detailRecipeImage mb-5"></img>
+      <div className='detailRecipe'>
+        <Container>
+          <Row>
+            <Col></Col>
+            <Col md={9} className='mx-auto'>
+              <h1 className="mb-5 mt-3">{recipeName}</h1>
+              <img src={showImageRecipe} alt="recipe pic" className="detailRecipeImage mb-5"></img>
 
-            <h4 className="textLeft">Ingredients</h4>
-            <p className="textLeft mb-5">{recipeIngre}</p>
+              <h4 className="textLeft">Ingredients</h4>
+              <p className="textLeft mb-5">{recipeIngre}</p>
 
-            <h4 className="textLeft">Steps</h4>
-            <p className="textLeft mb-5 ">{recipeSteps}</p>
+              <h4 className="textLeft">Steps</h4>
+              <p className="textLeft mb-5 ">{recipeSteps}</p>
 
-            <Form>
-              <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                <Form.Control as="textarea" placeholder="Comment here ..." rows={5} />
-              </Form.Group>
-              <Button variant="primary" type="submit" className="button">
-                Submit
-              </Button>
-            </Form>
-          </Col>
-          <Col></Col>
+              <Form className="mb-5" >
+                <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                  <Form.Control as="textarea" placeholder="Comment here ..." rows={5} />
+                </Form.Group>
+                <Button variant="primary" type="submit" className="button">
+                  Submit
+                </Button>
+              </Form>
 
+            <h4 className="textLeft">Comment</h4>
+            {/* <p className="textLeft">pic</p>
+            <p className="textLeft">comment</p> */}
+            </Col>
 
-          <h4 className="textLeft">Comment</h4>
-          <p className="textLeft">pic</p>
-          <p className="textLeft">comment</p>
+            <Col></Col>
+          </Row>
+        </Container>
+      </div>
+      <FooterTop/>
+      <FooterBottom/>
+    </>
 
-
-        </Row>
-
-        
-          <FooterTop />
-          <FooterBottom />
-
-    </div>
   );
 }
