@@ -12,7 +12,7 @@ import LandingPage from "./pages/LandingPage";
 import NewRecipe from "./pages/NewRecipe";
 import Profile from "./pages/Profile";
 import DetailRecipe from "./pages/DetailRecipe";
-import UrlNotFound from "./pages/UrlNotFound";
+// import UrlNotFound from "./pages/UrlNotFound";
 
 import React from "react";
 import axios from "axios";
@@ -41,14 +41,14 @@ export default function App() {
 
   return (
      <>
-      <Routes className="App">
+      <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
         <Route path="profile" element={<Profile />} />
         <Route path="detailRecipe" element={<DetailRecipe />} />
         <Route path="newRecipe" element={<NewRecipe />} />
-        <Route path="*" element={<UrlNotFound />} />
+        {/* <Route path="*" element={<UrlNotFound />} /> */}
       </Routes>
     </>
   );

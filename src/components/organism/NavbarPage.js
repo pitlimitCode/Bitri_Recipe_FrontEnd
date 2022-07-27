@@ -40,6 +40,8 @@ function NavbarPage() {
   var nameProfile = [];
   var rightNavbar = [];
   if (localStorage.getItem("name")) { 
+
+    nameProfile.push( <Nav.Link nameClass="navlink" href="/newrecipe">Add Recipe</Nav.Link>);
     nameProfile.push( <Nav.Link nameClass="navlink" 
                         // href="profile"
                         onClick={handleToProfile} ////////////////////
@@ -58,9 +60,10 @@ function NavbarPage() {
     <div className="bgYellow">
       <Container>
       <Navbar bg="transparent" variant="light">
+
+      {/* {userloggedIn ? <PageNavMovies} /> : <PageNav />} */}
         <Nav className="me-auto">
           <Nav.Link nameClass="navlink" href="/">Home</Nav.Link>
-          <Nav.Link nameClass="navlink" href="/newrecipe">Add Recipe</Nav.Link>
           {nameProfile} 
         </Nav>
         <Nav>

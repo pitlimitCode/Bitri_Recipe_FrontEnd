@@ -6,6 +6,7 @@
 :root {
   --theme-color: #EFC81A; /* var(--theme-color). Figma origin color = #EFC81A */
   --main-text-color: #2E266F; /* var(--main-text-color). Figma origin color = #2E266F*/ 
+  --second-color: #2E266F; /* var(--main-text-color). Figma origin color = #2E266F*/ 
 }
 /* saran, theme color = #6C241C */
 /* saran, main text color = #--- */
@@ -167,7 +168,7 @@ h4{
   width: 100%;
   border: 4px solid var(--theme-color);
   overflow: hidden;
-  /* height:fit-content; */
+  /* height: ; */
 }
 .picImagePages{
   border-radius: 20px;

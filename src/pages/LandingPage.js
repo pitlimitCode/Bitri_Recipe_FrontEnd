@@ -6,7 +6,7 @@ import {
 
 import NavbarPage from "../components/organism/NavbarPage";
 import SearchRecipe from '../components/organism/home/SearchRecipe';
-import NewestRecipe from '../components/organism/home/NewestRecipe';
+// import NewestRecipe from '../components/organism/home/NewestRecipe';
 import HomeAllRecipe from '../components/organism/home/AllRecipe';
 import FooterTop from "../components/organism/FooterTop";
 import FooterBottom from "../components/organism/FooterBottom";
@@ -23,12 +23,12 @@ function LandingPage() {
           <SearchRecipe />
         </Row>
 
-        <Row className="mb-4">
+        {/* <Row className="mb-4">
           <h4>New Recipe</h4>
         </Row>
         <Row className="mb-5">
           <NewestRecipe />
-        </Row>
+        </Row> */}
 
         <Row className="mb-4">
           <h4>All recipe</h4>
