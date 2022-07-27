@@ -41,19 +41,19 @@ function NavbarPage() {
   var rightNavbar = [];
   if (localStorage.getItem("name")) { 
 
-    nameProfile.push( <Nav.Link nameClass="navlink" href="/newrecipe">Add Recipe</Nav.Link>);
-    nameProfile.push( <Nav.Link nameClass="navlink" 
+    nameProfile.push( <Nav.Link className="navlink" href="/newrecipe">Add Recipe</Nav.Link>);
+    nameProfile.push( <Nav.Link className="navlink" 
                         // href="profile"
                         onClick={handleToProfile} ////////////////////
                       >
                         Welcome, {localStorage.getItem("name")}.
                       </Nav.Link>);
-    rightNavbar.push(<Nav.Link nameClass="navlink" onClick={handleLogout}>Logout</Nav.Link>);
+    rightNavbar.push(<Nav.Link className="navlink" onClick={handleLogout}>Logout</Nav.Link>);
     
   } else {
-    nameProfile.push(<Nav.Link nameClass="navlink" href="profile">Profile</Nav.Link>);
-    rightNavbar.push(<Nav.Link nameClass="navlink" href="login">Login</Nav.Link>);
-    rightNavbar.push(<Nav.Link nameClass="navlink" href="register">Register</Nav.Link>);
+    nameProfile.push(<Nav.Link className="navlink" href="profile">Profile</Nav.Link>);
+    rightNavbar.push(<Nav.Link className="navlink" href="login">Login</Nav.Link>);
+    rightNavbar.push(<Nav.Link className="navlink" href="register">Register</Nav.Link>);
   }
 
   return (
@@ -63,7 +63,7 @@ function NavbarPage() {
 
       {/* {userloggedIn ? <PageNavMovies} /> : <PageNav />} */}
         <Nav className="me-auto">
-          <Nav.Link nameClass="navlink" href="/">Home</Nav.Link>
+          <Nav.Link className="navlink" href="/">Home</Nav.Link>
           {nameProfile} 
         </Nav>
         <Nav>
