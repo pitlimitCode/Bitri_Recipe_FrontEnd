@@ -1,18 +1,20 @@
 import React from "react";
 import axios from "axios";
 import {
-  // Row,
+  Row,
   Col,
   Image,
   Nav,
+  Card,
 } from 'react-bootstrap';
+// import { Link } from "react-router-dom";
 
-import exRecipe1 from '../../../assets/default/exRecipe1.png';
-import exRecipe2 from '../../../assets/default/exRecipe2.png';
-import exRecipe3 from '../../../assets/default/exRecipe3.png';
-import exRecipe4 from '../../../assets/default/exRecipe4.png';
-import exRecipe5 from '../../../assets/default/exRecipe5.png';
-import exRecipe6 from '../../../assets/default/exRecipe6.png';
+// import exRecipe1 from '../../../assets/default/exRecipe1.png';
+// import exRecipe2 from '../../../assets/default/exRecipe2.png';
+// import exRecipe3 from '../../../assets/default/exRecipe3.png';
+// import exRecipe4 from '../../../assets/default/exRecipe4.png';
+// import exRecipe5 from '../../../assets/default/exRecipe5.png';
+// import exRecipe6 from '../../../assets/default/exRecipe6.png';
 // import exRecipe7 from '../../../assets/default/exRecipe7.png';
 
 export default function HomeAllRecipe() {
@@ -27,7 +29,7 @@ export default function HomeAllRecipe() {
   React.useEffect(() => {
     axios.get(process.env.REACT_APP_BE_URL + "recipes/show/all")
       .then((res) => {
-        // console.log(res.data.data);
+        console.log(res.data.data);
         // console.log(res.data.data[0].image);
         // console.log(res.data.data[1].image);
         // console.log(res.data.data[2].image);
@@ -47,7 +49,7 @@ export default function HomeAllRecipe() {
 
   return (
     <>
-      {/* <Row> */}
+      <Row>
         {/* {isLoading ? (
           <>
             {[...Array(6)]?.map(() => (
@@ -65,32 +67,23 @@ export default function HomeAllRecipe() {
             ))} */}
           {listData.map(data => (
             <Col key={data.id} xs={6} md={4} className ="parentImagePages mb-4">
-            <div className="pic100">
-              <Nav.Link 
-                href= 
-                  {linkRecipe} 
-                  // +
-                  // {data.id} // tidak bisa ada tambahan variabel di href
-              >
+            <Card className="pic100">
+              <Nav.Link href= {`${linkRecipe}${data.id}`}>
                 <Image 
-                  // src={data.image} 
-                  src={data.image} 
+                  src={`${process.env.REACT_APP_BE_URL}${data.image}`} 
                   className="picImagePages" 
                   alt="search pic"
-                  // href="2.html" 
-                  // onclick="location.href=this.href+'?key='+scrt_var;return false;"
-                  // onclick="location.href=?key=this.href+'?;return false;"
                 />
               </Nav.Link>
               <div className="bottom-left-text">{data.name}</div>
-            </div>
+            </Card>
             </Col>
-            ))}
+          ))}
         {/* )} */}
 
-
-        <Col md={4} className ="parentImagePages mb-4">
-          <Image src={"http://localhost:8000/images/food_images/foodImage_2.jpeg"} className="pic100" alt="Recipe on Pagination" />
+          
+        {/* <Col md={4} className ="parentImagePages mb-4">
+          <Image src={"exRecipe6"} className="pic100" alt="Recipe on Pagination" />
           <div className="bottom-left-text">NAMA RESEPP</div>
         </Col>
         <Col md={4} className ="parentImagePages mb-4">
@@ -116,9 +109,9 @@ export default function HomeAllRecipe() {
         <Col md={4} className ="parentImagePages mb-4">
           <Image src={exRecipe1} className="pic100" alt="search pic" />
           <div className="bottom-left-text">NAMA RESEPP</div>
-        </Col>
+        </Col> */}
 
-      {/* </Row>  */}
+      </Row> 
     </>
   );
 }

@@ -24,7 +24,7 @@ function NewRecipe() {
 
 
       <Container>
-        <Row className="mb-5 text-center">Add Your New Recipe</Row>
+        <h1 className="my-5 text-center">Add Your New Recipe</h1>
         <Row className="mt-5">
           <Col></Col>
           <Col md={10}>

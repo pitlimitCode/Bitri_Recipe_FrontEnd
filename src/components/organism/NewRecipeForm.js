@@ -16,6 +16,7 @@ function NewRecipeForm() {
   const [ingre, setIngre] = React.useState("");
   const [steps, setSteps] = React.useState("");
 
+  console.log(process.env.REACT_APP_BE_URL + "recipes/add")
   const handleNewRecipe = () => {
     setIsLoading(true);
     axios
@@ -25,11 +26,13 @@ function NewRecipeForm() {
         ingredients: ingre,
         step: steps,
       })
-      // .then((res) => {
-      //   setIsError(false);
-      //   window.location.href = "/";
-      // })
+      .then((res) => {
+        console.log(res);
+        setIsError(false);
+        window.location.href = "/";
+      })
       .catch((err) => {
+        console.log(err?.response?.data)
         setIsError(true);
         setErrorMsg(err?.response?.data);
       })
@@ -50,6 +53,7 @@ function NewRecipeForm() {
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
           <Form.Control type="file" placeholder="Input Recipe Image (under maintenance)" rows={8} 
             // onChange={(e) => setImage(e.target.value)} 
+            disabled
           />
         </Form.Group>
 
@@ -71,10 +75,11 @@ function NewRecipeForm() {
           />
         </Form.Group>
 
+
         <Button 
           variant="primary" 
-          type="submit" 
-          className="button" 
+          type="button" 
+          className="button center" 
           disabled={isLoading}
           onClick={handleNewRecipe}
         >

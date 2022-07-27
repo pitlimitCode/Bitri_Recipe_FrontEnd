@@ -3,7 +3,7 @@ import {
   Navbar, 
   Nav, 
 } from 'react-bootstrap';
-import React from "react";
+import React, {useState, useEffect} from "react";
 import axios from "axios";
 
 function NavbarPage() {
@@ -14,19 +14,11 @@ function NavbarPage() {
     window.location.href = "/login";
   };
 
-  // Link to self user profile
-
-  // const activeToken = () => {
-  // Error verify type: jwt expired.  
-  // }
-
   const handleToProfile = () => {
     axios.get(process.env.REACT_APP_BE_URL + "users/getid")
       .then(res => {
-        // console.log(res);
-        console.log(res.data.id);
-
-        // if (res.reqsuest.response) {}
+        console.log(res);
+        // console.log(res.data.id);
 
         // window.location.href = "http://localhost:8000/users/show/id?id=" + res.data.id;
         window.location.href = "http://localhost:3000/profile/?id=" + res.data.id;
@@ -37,39 +29,48 @@ function NavbarPage() {
       })
   }
 
-  var nameProfile = [];
-  var rightNavbar = [];
-  if (localStorage.getItem("name")) { 
-
-    nameProfile.push( <Nav.Link className="navlink" href="/newrecipe">Add Recipe</Nav.Link>);
-    nameProfile.push( <Nav.Link className="navlink" 
-                        // href="profile"
-                        onClick={handleToProfile} ////////////////////
-                      >
-                        Welcome, {localStorage.getItem("name")}.
-                      </Nav.Link>);
-    rightNavbar.push(<Nav.Link className="navlink" onClick={handleLogout}>Logout</Nav.Link>);
-    
-  } else {
-    nameProfile.push(<Nav.Link className="navlink" href="profile">Profile</Nav.Link>);
-    rightNavbar.push(<Nav.Link className="navlink" href="login">Login</Nav.Link>);
-    rightNavbar.push(<Nav.Link className="navlink" href="register">Register</Nav.Link>);
-  }
-
+  const [isLogin, setIsLogin] = useState(false);
+  useEffect(() => {
+    if (localStorage.getItem('name')) {
+      setIsLogin(true);
+    } else {
+      setIsLogin(false);
+    }
+  }, []);
+  
   return (
     <div className="bgYellow">
       <Container>
-      <Navbar bg="transparent" variant="light">
 
-      {/* {userloggedIn ? <PageNavMovies} /> : <PageNav />} */}
-        <Nav className="me-auto">
-          <Nav.Link className="navlink" href="/">Home</Nav.Link>
-          {nameProfile} 
-        </Nav>
-        <Nav>
-          {rightNavbar}
-        </Nav>
-      </Navbar>
+
+      {isLogin ? (
+        <Navbar className="textcolor1">
+          <Nav className="me-auto">
+            <Nav.Link className="navlink textcolor1" href="/">Home</Nav.Link>
+            <Nav.Link className="navlink textcolor1" href="/newrecipe">Add Recipe</Nav.Link>
+            <Nav.Link className="navlink textcolor1" 
+              // href="profile"
+              onClick={handleToProfile} ////////////////////
+            >
+              Welcome, {localStorage.getItem("name")}.
+            </Nav.Link>
+            
+          </Nav>
+          <Nav>
+            <Nav.Link className="navlink textcolor1" onClick={handleLogout}>Logout</Nav.Link>
+          </Nav>
+        </Navbar>
+      ) : (
+        <Navbar variant="light">
+          <Nav className="me-auto">
+            <Nav.Link className="navlink textcolor1" href="/">Home</Nav.Link>
+          </Nav>
+          <Nav>
+            <Nav.Link className="navlink textcolor1" href="login">Login</Nav.Link>
+            <Nav.Link className="navlink textcolor1" href="register">Register</Nav.Link>
+          </Nav>
+        </Navbar>
+      )}
       </Container>
     </div>
   );

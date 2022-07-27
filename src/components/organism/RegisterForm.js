@@ -94,7 +94,7 @@ function RegisterForm() {
           <div className="d-grid gap-2">
             <Button 
               variant="primary" 
-              type="submit" 
+              type="button" 
               className="button" 
               disabled={isLoading}
               onClick={handleRegister}

@@ -9,7 +9,7 @@ function FooterBottom() {
   return (
     <div className='bgYellow'>
       <Container>
-      <Row className='pb-2'>
+      <Row className='pb-2 text-center'>
         <Col></Col>
         <Col>
           <p className='footerP'>Product Company Learn more Get in touch </p>

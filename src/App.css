@@ -17,6 +17,9 @@
 .yellowIt{ /* coloring text */
   color: var(--theme-color);
 }
+.textcolor1{
+  color: var(--main-text-color);
+}
 .App {
   text-align: center;
   background-color:aquamarine;
@@ -153,6 +156,12 @@ h4{
   width: 200px;
   height: 200px;
   border-radius: 50%;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Image{

@@ -13,7 +13,7 @@ export default function HomeNewestRecipe() {
   // const [isLoading, setIsLoading] = React.useState([]);
   
   // const [idRecipe, setidRecipe] = React.useState([]);
-  // const [url, setUrl] = React.useState([]);
+  const [url, setUrl] = React.useState([]);
   const [recipe, setRecipe] = React.useState([]);
   const [user, setUser] = React.useState([]);
   // const [imageUpdate, setImageUpdate] = React.useState([]);
@@ -22,7 +22,7 @@ export default function HomeNewestRecipe() {
     axios.get(process.env.REACT_APP_BE_URL + "recipes/show/new")
       .then((res) => {
         // setidRecipe(res.data.data[0].id_recipe);
-        // setUrl("http://localhost:3000/detailrecipe/?id=" + idRecipe);
+        setUrl("http://localhost:3000/detailrecipe/?id=" + res.data.data[0].id_recipe);
         // setUrl("http://localhost:3000/detailrecipe/");
         setRecipe(res.data.data[0].name_recipe);
         setUser(res.data.data[0].name);
@@ -75,9 +75,9 @@ export default function HomeNewestRecipe() {
           <p>Recipe by {user}</p>
           <Button
             variant="primary"
-            type="submit"
+            type="button"
             className="button"
-            href="http://localhost:3000/detailrecipe/"
+            href={url}
           >
             Learn More
           </Button>

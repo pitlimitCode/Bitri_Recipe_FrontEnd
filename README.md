@@ -1,7 +1,3 @@
-.env example: 
-REACT_APP_BE_URL="http://localhost:8000/"
-
-
 - Redux,
 library untuk state management. memiliki 3 komponen utama: action, reducer, dan store. sifatnya seperti database yang dapat dipakai dalam frontend framework, fungsinya untuk operasi seperti query insert insert delete, dapat juga digunakan untuk logic seperti validasi, verifikasi, autorisasi. 
 
@@ -9,40 +5,10 @@ library untuk state management. memiliki 3 komponen utama: action, reducer, dan 
 teknik yang lebih lanjut (di React) untuk logic penggunaan komponen, umumnya digunakan bersamaan dengan aplikasi pihak ketiga seperti Redux dan Relay.
 
 
-registerform
-loginform
-app.js
-
-
-
-register same email
-logout
-login
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## Tugas Frontend dgn React 05 juli:
 - Melanjutkan program Backend Sebelumnya
 - Semua requirement dari Week sebelumnya
-- Navigation (Public & Private) (private *)
+- Navigation (Public & Private)
 - Slicing: 
   - Login, 
   - register, 
@@ -51,9 +17,9 @@ login
   - nambah recipe,
   - profile (foto, nama, resep yang udah dibuat)
 - localStorage
-- Redux (CRUD) & with file (*)
+- Redux (CRUD) & with file
 - URL Params (Search, Sort, dan Pagination)
-- Build & Deploy (*)
+- Build & Deploy
 - ENV
 - Responsive (optional, nilai plus)
 - Linter
@@ -68,15 +34,6 @@ login
     - HOC
   - Ceritakan dan Demokan tentang proyek ini
 - Css design pakai react bootstrap atau bootstrap  
-
-(*)dijelaskan di kelas tambahan  
-
-
-
-
-ISI TOKEN LOGIN MALAH INPUT BAHKAN YANG STATUS 400
-UBAH DATABASE PHONE NUMBER KAREN TIDAK BISA TERIMA NOMOR 12 DIGIT KEATAS
-
 
 # Getting Started with Create React App
 
