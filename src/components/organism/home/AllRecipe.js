@@ -29,7 +29,7 @@ export default function HomeAllRecipe() {
   React.useEffect(() => {
     axios.get(process.env.REACT_APP_BE_URL + "recipes/show/all")
       .then((res) => {
-        console.log(res.data.data);
+        // console.log(res.data.data);
         // console.log(res.data.data[0].image);
         // console.log(res.data.data[1].image);
         // console.log(res.data.data[2].image);

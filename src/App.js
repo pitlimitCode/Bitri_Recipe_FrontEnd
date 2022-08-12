@@ -12,6 +12,7 @@ import LandingPage from "./pages/LandingPage";
 import NewRecipe from "./pages/NewRecipe";
 import Profile from "./pages/Profile";
 import DetailRecipe from "./pages/DetailRecipe";
+import SearchRecipePage from './pages/SearchRecipePage';
 // import UrlNotFound from "./pages/UrlNotFound";
 
 import React from "react";
@@ -49,6 +50,7 @@ export default function App() {
         <Route path="profile" element={<Profile />} />
         <Route path="detailRecipe" element={<DetailRecipe />} />
         <Route path="newRecipe" element={<NewRecipe />} />
+        <Route path="search" element={<SearchRecipePage />} />
         {/* <Route path="*" element={<UrlNotFound />} /> */}
       </Routes>
     </>

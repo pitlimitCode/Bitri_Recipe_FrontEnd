@@ -6,8 +6,6 @@ import {
 import React from "react";
 import axios from "axios";
 
-import newestRecipe from "../../../assets/default/newestRecipe.png";
-
 export default function HomeNewestRecipe() {
   // const [listPhoto, setListPhoto] = React.useState([]);
   // const [isLoading, setIsLoading] = React.useState([]);
@@ -16,7 +14,7 @@ export default function HomeNewestRecipe() {
   const [url, setUrl] = React.useState([]);
   const [recipe, setRecipe] = React.useState([]);
   const [user, setUser] = React.useState([]);
-  // const [imageUpdate, setImageUpdate] = React.useState([]);
+  const [imageUpdate, setImageUpdate] = React.useState([]);
   
   React.useEffect(() => {
     axios.get(process.env.REACT_APP_BE_URL + "recipes/show/new")
@@ -26,7 +24,7 @@ export default function HomeNewestRecipe() {
         // setUrl("http://localhost:3000/detailrecipe/");
         setRecipe(res.data.data[0].name_recipe);
         setUser(res.data.data[0].name);
-        // setImageUpdate(res.data.data[0].image_recipe); /////
+        setImageUpdate(res.data.data[0].image_recipe); /////
 
         // console.log(res.data.data[0]);
         // console.log(res.data.data[1].image_recipe);
@@ -64,12 +62,16 @@ export default function HomeNewestRecipe() {
     //  )} 
 
     <>
-      <Col md={6}>
-        <Image src={newestRecipe} className="pic100" alt="search pic" />
+      <Col xs={6} md={6} className ="parentImagePages">
+        <Image 
+          src={`${process.env.REACT_APP_BE_URL}${imageUpdate}`} 
+          alt="search pic" 
+          className="pic100" 
+        />
       </Col>
 
-      <Col md={1}></Col>
-      <Col md={5}>
+      <Col xs={1} md={1}></Col>
+      <Col xs={5} md={5}>
         <div className='centering textLeft'>
           <h1>{recipe}</h1>
           <p>Recipe by {user}</p>

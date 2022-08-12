@@ -50,7 +50,7 @@ function RegisterForm() {
       <Form className='registerForm'>
         <p className='title'>Let’s Get Started !!!</p>
         <p className='descForm'>Create New Account</p>
-        <p classNmae='descForm'>to Access All Features</p>
+        <p className='descForm'>to Access All Features</p>
 
         {/* Alert error message */}
         {isError 

@@ -27,7 +27,7 @@ export default function HomeSearchRecipe() {
 
   return (
     <>
-      <Col md={5}>
+      <Col xs={5} md={5}>
         <div className='centering textLeft'>
           <h1 className='textLeft'>Discover Recipe</h1>
           <h1 className='textLeft'>& Delicious Food</h1>
@@ -47,8 +47,8 @@ export default function HomeSearchRecipe() {
           </Form>
         </div>
       </Col>
-      <Col md={1}></Col>
-      <Col md={6}>
+      <Col xs={1} md={1}></Col>
+      <Col xs={6} md={6}>
           <Image src={searchRecipe} className="pic100" alt="search pic" />
       </Col>
     </>

@@ -1,14 +1,10 @@
-- Redux,
-library untuk state management. memiliki 3 komponen utama: action, reducer, dan store. sifatnya seperti database yang dapat dipakai dalam frontend framework, fungsinya untuk operasi seperti query insert insert delete, dapat juga digunakan untuk logic seperti validasi, verifikasi, autorisasi. 
-
-- HOC [High Order Component] ,
-teknik yang lebih lanjut (di React) untuk logic penggunaan komponen, umumnya digunakan bersamaan dengan aplikasi pihak ketiga seperti Redux dan Relay.
-
-
-## Tugas Frontend dgn React 05 juli:
-- Melanjutkan program Backend Sebelumnya
+## Frontend using React, July 05th:
+- Melanjutkan program Backend sebelumnya
 - Semua requirement dari Week sebelumnya
-- Navigation (Public & Private)
+- ENV
+- Gunakan Bahasa Inggris untuk nama File dan Fungsi
+- Linter
+- Css design pakai react bootstrap atau bootstrap  
 - Slicing: 
   - Login, 
   - register, 
@@ -17,23 +13,19 @@ teknik yang lebih lanjut (di React) untuk logic penggunaan komponen, umumnya dig
   - nambah recipe,
   - profile (foto, nama, resep yang udah dibuat)
 - localStorage
-- Redux (CRUD) & with file
-- URL Params (Search, Sort, dan Pagination)
-- Build & Deploy
-- ENV
-- Responsive (optional, nilai plus)
-- Linter
 - Hooks [function component, atomic design]
-- Webpack (tidak perlu)
-- Persist storage (tidak perlu)
-- Gunakan Bahasa Inggris untuk nama File dan Fungsi
+- URL Params (Search, Sort, dan Pagination)
+- Redux (CRUD) & with file
+- Navigation (Public & Private)
+- Build & Deploy
 - Upload/push tugas kamu ke github dan gunakan nama yang profesional
-- Presentasikan apa yang telah Anda lakukan dalam minggu ini
-  - Jelaskan dengan bahasa kalian sendiri tentang apa itu dan konsep tentang:
-    - Redux
-    - HOC
-  - Ceritakan dan Demokan tentang proyek ini
-- Css design pakai react bootstrap atau bootstrap  
+- Responsive (optional)
+- Webpack (optional)
+- Persist storage (optional)
+
+Redux, library untuk state management. memiliki 3 komponen utama: action, reducer, dan store. sifatnya seperti database yang dapat dipakai dalam frontend framework, fungsinya untuk operasi seperti query insert insert delete, dapat juga digunakan untuk logic seperti validasi, verifikasi, autorisasi.  
+HOC [High Order Component], teknik yang lebih lanjut (di React) untuk logic penggunaan komponen, umumnya digunakan bersamaan dengan aplikasi pihak ketiga seperti Redux dan Relay.  
+
 
 # Getting Started with Create React App
 
