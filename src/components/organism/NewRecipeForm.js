@@ -22,7 +22,6 @@ function NewRecipeForm() {
   formData.append('ingredients', ingre);
   formData.append('step', steps);
 
-  console.log(process.env.REACT_APP_BE_URL + "recipes/add")
   const handleNewRecipe = () => {
     setIsLoading(true);
     axios
@@ -58,7 +57,7 @@ function NewRecipeForm() {
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
           <Form.Control type="file" rows={8} 
             onChange={(e) => setImage(e.target.files[0])} 
-            // disabled
+            disabled
           />
         </Form.Group>
 

@@ -25,7 +25,8 @@ export default function HomeAllRecipe() {
 
   // const [isLoading, setIsLoading] = React.useState([]);
   const [listData, setListData] = React.useState([]);
-  const [linkRecipe, setLinkRecipe] = React.useState([]);
+  const linkRecipe = "http://localhost:3000/detailrecipe/?id=";
+  
   React.useEffect(() => {
     axios.get(process.env.REACT_APP_BE_URL + "recipes/show/all")
       .then((res) => {
@@ -37,7 +38,7 @@ export default function HomeAllRecipe() {
         // console.log(res.data.data[4].image);
         // console.log(res.data.data[5].image);
         setListData(res.data.data);
-        setLinkRecipe("http://localhost:3000/detailrecipe/?id=");
+        // setLinkRecipe();
 
       //   setTimeout(() => {
       //     setIsLoading(false);

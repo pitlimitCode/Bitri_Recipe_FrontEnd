@@ -6,7 +6,7 @@ import {
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 
-function NavbarPage() {
+export default function NavbarPage() {
   // Log Out = Remove data in local storage.
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -17,15 +17,15 @@ function NavbarPage() {
   const handleToProfile = () => {
     axios.get(process.env.REACT_APP_BE_URL + "users/getid")
       .then(res => {
-        console.log(res);
+        // console.log(res);
         // console.log(res.data.id);
 
         // window.location.href = "http://localhost:8000/users/show/id?id=" + res.data.id;
         window.location.href = "http://localhost:3000/profile/?id=" + res.data.id;
       })
       .catch(err => {
-        console.log(err.headers.request.response);
-        // console.log(err)
+        // console.log(err.headers.request.response);
+        console.log(err)
       })
   }
 
@@ -75,5 +75,3 @@ function NavbarPage() {
     </div>
   );
 }
-
-export default NavbarPage;

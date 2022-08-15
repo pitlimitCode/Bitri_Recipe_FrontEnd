@@ -2,18 +2,18 @@ import {
   Container,
   Row, 
   Col, 
-  Button, 
-  Form,
 } from 'react-bootstrap';
 
 import React from 'react';
 import axios from "axios";
 
 import NavbarPage from "../components/organism/NavbarPage";
+import FormComment from "../components/organism/FormComment";
+import CommentersInARecipe from "../components/organism/CommentersInARecipe";
 import FooterTop from "../components/organism/FooterTop";
 import FooterBottom from "../components/organism/FooterBottom";
 
-// import defaultDetailRecipe from '../assets/default/detailRecipe.png';
+// import DefaultAvatar from '../assets/default/avatar.jpg';
 
 import { useLocation } from 'react-router-dom';
 
@@ -74,20 +74,24 @@ export default function DetailRecipe() {
               <h4 className="textLeft">Steps</h4>
               <p className="textLeft mb-5 ">{recipeSteps}</p>
 
-              <Form className="mb-5" >
+              {/* <Form className="mb-5" >
                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                  {/* <Form.Control as="textarea" placeholder="Comment here ..." rows={5} /> */}
                   <Form.Control as="textarea" placeholder="comment the content, coming soon..." rows={2} />
                 </Form.Group>
                 <Button variant="primary" type="submit" className="button">
                   Submit
                 </Button>
-              </Form>
+              </Form> */}
+            < FormComment recipeId={id} />
 
             <h4 className="textLeft">Comment</h4>
-            <h6>coming soon...</h6>
+            {/* <img src={DefaultAvatar} /> */}
+            {/* <div>comment 1</div> */}
+
+            {/* <h6>coming soon...</h6> */}
             {/* <p className="textLeft">pic</p>
             <p className="textLeft">comment</p> */}
+            < CommentersInARecipe recipeId={id} />
             </Col>
 
             <Col></Col>
