@@ -1,5 +1,6 @@
 # Bitri Recipe in Desktop Browser - React JS
 Repository Github: [```https://github.com/pitlimitCode/Bitri_Recipe_FrontEnd```](https://github.com/pitlimitCode/Bitri_Recipe_FrontEnd)  
+Repository REST API (Back-end ExpressJS): [```https://github.com/pitlimitCode/Bitri_Recipe_Web```](https://github.com/pitlimitCode/Bitri_Recipe_Web) 
 Referensi User Interface: [```Figma UI```](https://www.figma.com/file/SUbBTYCq1e4ngRt20lSdqr/Food-Recipe?node-id=47%3A1273)  
 
 Lompat ke:  
