@@ -6,7 +6,6 @@
 - contributing?
 - lisence buat apa?
 - link deploy firebase di "View Demo" (FE)
-
 - url deploy paling akhir untuk "Web Service" (BE) dan "Demo Bitri Recipe" (FE)
 
 <div id="top"></div>
@@ -179,6 +178,7 @@ Contributions are what make the open source community such an amazing place to b
 ## Related Project
 :rocket: [`Backend Bitri Recipe`](https://github.com/pitlimitCode/Bitri_Recipe_Web/tree/FrontEnd+)
 :rocket: [`Frontend Bitri Recipe`](https://github.com/pitlimitCode/Bitri_Recipe_FrontEnd/tree/master)
+:rocket: [`Frontend Bitri Recipe Mobile`](https://github.com/pitlimitCode/Bitri_Recipe_FrontEnd/tree/master)
 :rocket: [`Web Service`](#)
 :rocket: [`Demo Bitri Recipe`](#)
 <p align="right">(<a href="#top">back to top</a>)</p>
