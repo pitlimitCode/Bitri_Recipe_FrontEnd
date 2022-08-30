@@ -123,12 +123,13 @@ REACT_APP_BE_URL="[YOUR_BACKEND_URL]"
     <td>Login Page</td>
     <td>Register Page</td>
   </tr>
-</br>
   <tr>
     <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659351592/portofolio/recipe/login_ukszon.png" alt="Login Page" width=100%></td>
     <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659351587/portofolio/recipe/register_jsv1kj.png" width=100%/></td>
   </tr>
+</table>
 
+<table>
   <tr>
     <td>Home</td>
     <td>Profile</td>
@@ -136,21 +137,16 @@ REACT_APP_BE_URL="[YOUR_BACKEND_URL]"
   <tr>
     <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659255590/portofolio/recipe/Home_az4b40.png" alt="Home" width=100%></td>
     <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659351616/portofolio/recipe/profile_mkvlj8.png" alt="profile" width=100%/></td>
-</br>
   </tr>
     
   <tr>
     <td>Add Recipe</td>
     <td>Edit Recipe</td>
-</br>
   </tr>
   <tr>
     <tr>
     <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659359397/portofolio/recipe/Add_Recipe_ui9vgx.png" alt="add" width=100%></td>
-</br>
-    <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659255601/portofolio/recipe/Edit_Profile_dssupf.png" alt="edit" width=100%/>
-</br></td>
-</br>
+    <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659255601/portofolio/recipe/Edit_Profile_dssupf.png" alt="edit" width=100%/></td>
   </tr>
 
   <tr>
