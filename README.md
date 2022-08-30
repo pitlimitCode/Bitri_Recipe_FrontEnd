@@ -138,7 +138,9 @@ REACT_APP_BE_URL="[YOUR_BACKEND_URL]"
     <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659255590/portofolio/recipe/Home_az4b40.png" alt="Home" width=100%></td>
     <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659351616/portofolio/recipe/profile_mkvlj8.png" alt="profile" width=100%/></td>
   </tr>
-    
+</table>
+
+<table>
   <tr>
     <td>Add Recipe</td>
     <td>Edit Recipe</td>
@@ -148,7 +150,9 @@ REACT_APP_BE_URL="[YOUR_BACKEND_URL]"
     <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659359397/portofolio/recipe/Add_Recipe_ui9vgx.png" alt="add" width=100%></td>
     <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659255601/portofolio/recipe/Edit_Profile_dssupf.png" alt="edit" width=100%/></td>
   </tr>
+</table>
 
+<table>
   <tr>
     <td>Detail Recipe</td>
     <td>Detail Video</td>
