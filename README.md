@@ -147,7 +147,10 @@ REACT_APP_BE_URL="[YOUR_BACKEND_URL]"
   <tr>
     <tr>
     <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659359397/portofolio/recipe/Add_Recipe_ui9vgx.png" alt="add" width=100%></td>
-    <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659255601/portofolio/recipe/Edit_Profile_dssupf.png" alt="edit" width=100%/></td>
+</br>
+    <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659255601/portofolio/recipe/Edit_Profile_dssupf.png" alt="edit" width=100%/>
+</br></td>
+</br>
   </tr>
 
   <tr>
