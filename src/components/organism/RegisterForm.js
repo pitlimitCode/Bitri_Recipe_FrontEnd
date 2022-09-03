@@ -20,7 +20,7 @@ function RegisterForm() {
   const handleRegister = () => {
     setIsLoading(true);
     axios
-      .post(process.env.REACT_APP_BE_URL + "users/add", {
+      .post(process.env.REACT_APP_BE_URL + "/users/add", {
         name: name,
         email: email,
         phone_number: phonenumber,
@@ -29,12 +29,7 @@ function RegisterForm() {
       })
       .then((res) => {
         setIsError(false);
-
-      // SET TOKEN
-        // localStorage.setItem("token", res?.data);
-        localStorage.setItem("token", res?.data?.token);
-        localStorage.setItem("name", res?.data?.name);
-        window.location.href = "/";
+        window.location.href = "/login";
       })
       .catch((err) => {
         setIsError(true);
@@ -47,7 +42,7 @@ function RegisterForm() {
 
   return (
     <>
-      <Form className='registerForm'>
+      <div className='registerForm'>
         <p className='title'>Let’s Get Started !!!</p>
         <p className='descForm'>Create New Account</p>
         <p className='descForm'>to Access All Features</p>
@@ -106,7 +101,7 @@ function RegisterForm() {
 
         <p className='descBottomForm'>Already have account? <a className="yellowIt" href="login">Log in Here</a></p>
 
-      </Form>
+      </div>
       </>
   );
 }

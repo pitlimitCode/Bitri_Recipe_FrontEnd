@@ -22,10 +22,10 @@ function NewRecipeForm() {
   formData.append('ingredients', ingre);
   formData.append('step', steps);
 
-  const handleNewRecipe = () => {
+  const handleNewRecipe = async () => {
     setIsLoading(true);
-    axios
-      .post(process.env.REACT_APP_BE_URL + "recipes/add", formData, {
+    await axios
+      .post(process.env.REACT_APP_BE_URL + "/recipes/add", formData, {
         headers: {
           'content-type': 'multipart/form-data',
         },
@@ -57,7 +57,6 @@ function NewRecipeForm() {
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
           <Form.Control type="file" rows={8} 
             onChange={(e) => setImage(e.target.files[0])} 
-            disabled
           />
         </Form.Group>
 
@@ -66,7 +65,7 @@ function NewRecipeForm() {
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-          <Form.Control as="textarea" placeholder="Ingredients" rows={6} onChange={(e) => setIngre(e.target.value)} />
+          <Form.Control as="textarea" placeholder="Ingredients" rows={6} onChange={(e) => JSON.stringify(setIngre(e.target.value))} />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">

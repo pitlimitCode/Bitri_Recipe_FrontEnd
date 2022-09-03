@@ -13,7 +13,8 @@ function FooterBottom() {
         <Col></Col>
         <Col>
           <div className='footerP'>
-            <span className='px-2' style={{fontSize:'14px'}}>Product Company</span>
+            <span className='px-2' style={{fontSize:'14px'}}>Product</span>
+            <span className='px-2' style={{fontSize:'14px'}}>Company</span>
             <span className='px-2' style={{fontSize:'14px'}}>Learn more</span>
             <span className='px-2' style={{fontSize:'14px'}}>Get in touch </span>
           </div>

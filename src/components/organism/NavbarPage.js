@@ -15,18 +15,20 @@ export default function NavbarPage() {
   };
 
   const handleToProfile = () => {
-    axios.get(process.env.REACT_APP_BE_URL + "users/getid")
-      .then(res => {
-        // console.log(res);
-        // console.log(res.data.id);
+    // axios.get(process.env.REACT_APP_BE_URL + "/users/getid")
+    //   .then(res => {
+    //     // console.log(res);
+    //     console.log(res.data.id);
 
-        // window.location.href = "http://localhost:8000/users/show/id?id=" + res.data.id;
-        window.location.href = "http://localhost:3000/profile/?id=" + res.data.id;
-      })
-      .catch(err => {
-        // console.log(err.headers.request.response);
-        console.log(err)
-      })
+        // window.location.href = "http://localhost:8000/users/id/" + res.data.id;
+        // window.location.href = process.env.REACT_APP_FE_URL + "3000/profile/?id=" + res.data.id;
+
+        window.location.href = process.env.REACT_APP_FE_URL + "/profile";
+
+    //    })
+    //    .catch(err => {
+    //      console.log(err)
+    //    })
   }
 
   const [isLogin, setIsLogin] = useState(false);
@@ -49,8 +51,8 @@ export default function NavbarPage() {
             <Nav.Link className="navlink textcolor1" href="/">Home</Nav.Link>
             <Nav.Link className="navlink textcolor1" href="/newrecipe">Add Recipe</Nav.Link>
             <Nav.Link className="navlink textcolor1" 
-              // href="profile"
-              onClick={handleToProfile} ////////////////////
+              href="/profile"
+              // onClick={handleToProfile}
             >
               Welcome, {localStorage.getItem("name")}.
             </Nav.Link>

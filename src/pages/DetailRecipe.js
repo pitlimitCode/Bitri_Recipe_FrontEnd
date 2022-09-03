@@ -2,6 +2,8 @@ import {
   Container,
   Row, 
   Col, 
+  Image,
+	Spinner,
 } from 'react-bootstrap';
 
 import React from 'react';
@@ -13,42 +15,41 @@ import CommentersInARecipe from "../components/organism/CommentersInARecipe";
 import FooterTop from "../components/organism/FooterTop";
 import FooterBottom from "../components/organism/FooterBottom";
 
-// import DefaultAvatar from '../assets/default/avatar.jpg';
-
 import { useLocation } from 'react-router-dom';
 
 export default function DetailRecipe() {
   const search = useLocation().search;
   const id = new URLSearchParams(search).get('id');
   // console.log(id);
-  
   const [recipeName, setRecipeName] = React.useState("");
   const [recipeImage, setRecipeImage] = React.useState("");
   const [recipeIngre, setRecipeIngre] = React.useState("");
   const [recipeSteps, setRecipeSteps] = React.useState("");
-  // let showImageRecipe = defaultDetailRecipe;
+  const [isLoading, setIsLoading] = React.useState([]);
 
   React.useEffect(() => {
-    axios.get(process.env.REACT_APP_BE_URL + "recipes/show/id?id=" + id)
+    axios.get(process.env.REACT_APP_BE_URL + "/recipes/id/" + id)
       .then((res) => {
         // console.log(res);
-        // console.log(res.data[0]);
-        // id_user: 3
         // video: null
+        
+        // console.log(res.data.data[0]);
+        console.log(res.data.data[0].ingredients);
+        // console.log(JSON.parse(res.data.data[0].ingredients));
 
-        setRecipeName(res.data[0].name);
-        setRecipeImage(res.data[0].image);
-        setRecipeIngre(res.data[0].ingredients);
-        setRecipeSteps(res.data[0].step);
+        setRecipeName(res.data.data[0].name);
+        setRecipeImage(res.data.data[0].image);
+        setRecipeIngre(res.data.data[0].ingredients);
+        setRecipeSteps(res.data.data[0].step);
       })
-      .catch((e) => console.log(e.message))
-    }); 
-    
-    // console.log(showImageRecipe);
-    // console.log(recipeImage);
-    // if(recipeImage){
-    //   showImageRecipe = recipeImage;
-    // }
+      .catch((e) => {
+        console.log(e.message)
+        setIsLoading(false);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      }, []);
+  }); 
 
   return (
     <>
@@ -60,38 +61,37 @@ export default function DetailRecipe() {
             <Col md={9} className='mx-auto'>
               <h1 className="my-4 text-center">{recipeName}</h1>
 
-              <Row>
-                <Col/>
-                <Col md={11}>
-              <img src={`${process.env.REACT_APP_BE_URL}${recipeImage}`} alt="recipe pic" className="detailRecipeImage mb-5 center"></img>
-              </Col>
-                <Col/>
-              </Row>
+              <Row className='mb-5'>
+                <Col md={1}/>
 
+                <Col md={10}>
+                {isLoading 
+                  ? (
+                    <div className="text-center">
+                      <Spinner animation="border" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                      </Spinner>
+                    </div>
+                  ) : (
+                    <Image src={`${process.env.REACT_APP_BE_URL}/${recipeImage}`} alt="recipe pic" className="detailRecipeImage center"></Image>
+                  )
+                }
+                </Col>
+                <Col md={1}>
+
+                  {/* ganti gambar auth */}
+                </Col>
+              </Row>
               <h4 className="textLeft">Ingredients</h4>
               <p className="textLeft mb-5">{recipeIngre}</p>
 
               <h4 className="textLeft">Steps</h4>
               <p className="textLeft mb-5 ">{recipeSteps}</p>
 
-              {/* <Form className="mb-5" >
-                <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                  <Form.Control as="textarea" placeholder="comment the content, coming soon..." rows={2} />
-                </Form.Group>
-                <Button variant="primary" type="submit" className="button">
-                  Submit
-                </Button>
-              </Form> */}
-            < FormComment recipeId={id} />
+            <FormComment recipeId={id} />
 
             <h4 className="textLeft">Comment</h4>
-            {/* <img src={DefaultAvatar} /> */}
-            {/* <div>comment 1</div> */}
-
-            {/* <h6>coming soon...</h6> */}
-            {/* <p className="textLeft">pic</p>
-            <p className="textLeft">comment</p> */}
-            < CommentersInARecipe recipeId={id} />
+            <CommentersInARecipe recipeId={id} />
             </Col>
 
             <Col></Col>

@@ -1,72 +1,75 @@
 import {
   Container,
-  Nav,
   Image,
+  // Button,
 } from 'react-bootstrap';
 
 import React from 'react';
 import axios from "axios";
 
 import NavbarPage from "../components/organism/NavbarPage";
+import ProfileAuthRecipe from "../components/organism/ProfileAuthRecipe";
 import FooterBottom from "../components/organism/FooterBottom";
 
-// import avatarUser from '../assets/default/avatar.jpg';
-
-import { useLocation } from 'react-router-dom';
-
 export default function Profile() {
-  // get params url ?id='id'
-  const search = useLocation().search;
-  const id = new URLSearchParams(search).get('id');
-  
+  const [IdUser, setIdUser] = React.useState("");
   const [userName, setUserName] = React.useState("");
   const [avatar, setAvatar] = React.useState("");
-  // let showAvatar = avatar;
+  const [ChangeAvatar, setChangeAvatar] = React.useState("");
+  
+  // AXIOS USER - GET ID AND SHOW AVATAR AND IMAGE
+  axios.get(process.env.REACT_APP_BE_URL + "/users/getid")
+    .then( async (res) => {
+      // console.log(res);
+      setIdUser(res.data.id)
 
-  React.useEffect(() => {
-    axios.get(process.env.REACT_APP_BE_URL + "users/show/id?id=" + id)
-      .then((res) => {
-        // console.log(res);
-        // console.log(res.data.data[0]);
-        setUserName(res.data.data[0].name);
-        setAvatar(res.data.data[0].avatar);
+      await axios.get(process.env.REACT_APP_BE_URL + "/users/id/" + IdUser)
+        .then((resprofile) => {
+          // console.log(resprofile);
+          setUserName(resprofile.data.data.name)
+          setAvatar(resprofile.data.data.avatar)
+        }).catch((e) => console.log(e.message));
+
+    }).catch((e) => console.log(e.message));
+
+  // CHANGE AVATAR USER
+  const formData = new FormData();
+  formData.append('avatar', ChangeAvatar);
+  const handleChangeAvatar = () => {
+    axios
+      .patch(process.env.REACT_APP_BE_URL + "/users/addavatar", formData, {
+        headers: {
+          'content-type': 'multipart/form-data',
+        },
       })
-      .catch((e) => console.log(e.message))
-  }); 
-    
-    // console.log(showAvatar);
-    // console.log(avatar);
-    // if(avatarUser){
-    //   showAvatar = avatarUser;
-    // }
-    // console.log(`${process.env.REACT_APP_BE_URL}${avatar}`);
-
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err?.response?.data)
+      });
+  };
+  
   return (
     <>
     <NavbarPage />
-
     <Container className="mt-4">
-      <Image src={`${process.env.REACT_APP_BE_URL}${avatar}`} alt='user avatar' className="avatar center" />
+      {/* AVATAR USER */}
+      {/* {console.log(`${process.env.REACT_APP_BE_URL}/${avatar}`)} */}
+      <Image src={`${process.env.REACT_APP_BE_URL}/${avatar}`} alt='user avatar' className="avatar center" />
+      
+      <input type="file"
+        onChange={(e) => setChangeAvatar(e.target.files[0])} 
+        onClick={handleChangeAvatar}
+        className="center"
+      />
+      {/* <span><Button /></span> */}
+
+      {/* NAME USER */}
       <h5 className="mt-2 mb-5 text-center">{userName}</h5>
     </Container>
       
-    <Container className="mt-4">
-    <Nav variant="tabs" defaultActiveKey="/home">
-      <Nav.Item>
-        <Nav.Link href="/selfrecipe" disabled>My Recipe</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link eventKey="/saved" disabled>Saved Recipe</Nav.Link>
-        {/* <Nav.Link eventKey="link-1">Save Recipe</Nav.Link> */}
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link eventKey="/liked" disabled>Liked Recipe</Nav.Link>
-      </Nav.Item>
-    </Nav>
-    </Container>
-
-    <hr/>
-        
+    <ProfileAuthRecipe />
     <FooterBottom />
     </>
   );

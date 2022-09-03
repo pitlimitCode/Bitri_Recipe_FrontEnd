@@ -13,7 +13,7 @@ export default function HomeSearchRecipe() {
   // const [imageRandom, setImageRandom] = React.useState([]); /////
   
   // React.useEffect(() => {
-  //   axios.get(process.env.REACT_APP_BE_URL + "recipes/show/new") ///// ubah jadi random image
+  //   axios.get(process.env.REACT_APP_BE_URL + "/recipes/fivenew") ///// ubah jadi random image
   //     .then((res) => {
   //       setImageRandom(res.data.data[2].image_recipe);
   //     } )
@@ -21,8 +21,12 @@ export default function HomeSearchRecipe() {
   // });
 
   const [searching, setSearching] = React.useState([]);
-  const linkToName = () => {
-    window.location.href = process.env.REACT_APP_BE_URL + "recipes/show/name?name=" + searching;
+  // console.log(searching);
+  // const linkRecipe = ;
+  const linkSearchByName = () => {
+    window.location.href = process.env.REACT_APP_FE_URL + "/search/?name=" + searching;
+    // console.log(searching);
+    // console.log(process.env.REACT_APP_FE_URL + "/search/?name=" + searching);
   };
 
   return (
@@ -32,15 +36,14 @@ export default function HomeSearchRecipe() {
           <h1 className='textLeft'>Discover Recipe</h1>
           <h1 className='textLeft'>& Delicious Food</h1>
           <Form onSubmit={(e) => e.preventDefault()}>
-            <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Group className="mb-3" controlId="formSearch">
               <Form.Control type="search" placeholder="Search recipe" onChange={(e) => setSearching(e.target.value)} />
             </Form.Group>
             <Button
               variant="primary"
               type="submit"
               className="button"
-              // disabled={isLoading}
-              onClick={linkToName}
+              onClick={linkSearchByName}
             >
               Submit
             </Button>

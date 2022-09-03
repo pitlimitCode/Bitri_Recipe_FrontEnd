@@ -14,6 +14,7 @@ import Profile from "./pages/Profile";
 import DetailRecipe from "./pages/DetailRecipe";
 import SearchRecipePage from './pages/SearchRecipePage';
 // import UrlNotFound from "./pages/UrlNotFound";
+// import Tes from "./pages/tes";
 
 import React from "react";
 import axios from "axios";
@@ -52,6 +53,7 @@ export default function App() {
         <Route path="newRecipe" element={<NewRecipe />} />
         <Route path="search" element={<SearchRecipePage />} />
         {/* <Route path="*" element={<UrlNotFound />} /> */}
+        {/* <Route path="tes" element={<Tes />} /> */}
       </Routes>
     </>
   );

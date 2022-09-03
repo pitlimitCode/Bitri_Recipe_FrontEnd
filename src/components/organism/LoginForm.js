@@ -19,7 +19,7 @@ function LoginForm() {
   const handleLogin = () => {
     setIsLoading(true);
     axios
-      .post(process.env.REACT_APP_BE_URL + "users/login", {
+      .post(process.env.REACT_APP_BE_URL + "/users/login", {
         email: email,
         password: password,
       })
