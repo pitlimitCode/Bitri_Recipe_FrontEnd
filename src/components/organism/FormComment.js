@@ -4,17 +4,16 @@ import {
 } from 'react-bootstrap';
 import React from "react";
 import axios from "axios";
+// import { useNavigate } from "react-router-dom";
 
 export default function FormComment(props) {
   // const search = useLocation().search;
   const getProps = props;
   // console.log(getProps);
   const recipe_id = getProps.recipeId;
+  // let navigate = useNavigate();
 
-  // const [isError, setIsError] = React.useState(false);
-  // const [errorMsg, setErrorMsg] = React.useState("");
   // const [isLoading, setIsLoading] = React.useState(false);
-
   const [Comment, setComment] = React.useState("");
 
   const handleNewComment = () => {
@@ -26,16 +25,9 @@ export default function FormComment(props) {
       })
       .then((res) => {
         // console.log(res);
-        // setIsError(false);
-      })
-      .catch((err) => {
-        console.log(err);
-        // setIsError(true);
-        // setErrorMsg(err?.response?.data);
-      })
-      .finally(() => {
-        window.location.href = `${process.env.REACT_APP_FE_URL}/detailrecipe/?id=${recipe_id}`;
-        // setIsLoading(false);
+        // navigate(`?id=${recipe_id}`);
+        // window.location.href = `${process.env.REACT_APP_FE_URL}/detailrecipe/?id=${recipe_id}`;
+        window.location.reload();
       }, []); 
   };
 

@@ -5,8 +5,10 @@ import {
 } from 'react-bootstrap';
 import React from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function RegisterForm() {
+  let navigate = useNavigate();
   const [isError, setIsError] = React.useState(false);
   const [errorMsg, setErrorMsg] = React.useState("");
   const [isLoading, setIsLoading] = React.useState(false);
@@ -29,11 +31,14 @@ function RegisterForm() {
       })
       .then((res) => {
         setIsError(false);
-        window.location.href = "/login";
-      })
-      .catch((err) => {
-        setIsError(true);
-        setErrorMsg(err?.response?.data);
+        
+        if (res.data.isValid){
+          navigate("/login");
+          // window.location.href = "/login";
+        } else {
+          setIsError(true);
+          setErrorMsg(res?.data.message);
+        }
       })
       .finally(() => {
         setIsLoading(false);
@@ -49,7 +54,7 @@ function RegisterForm() {
 
         {/* Alert error message */}
         {isError 
-          ? <Alert variant="danger">{errorMsg}</Alert> 
+          ? <Alert variant="danger" className="text-center">{errorMsg}</Alert> 
           : null
         } 
 

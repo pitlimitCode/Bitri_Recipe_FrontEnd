@@ -11,7 +11,6 @@ import {
 		// const search = useLocation().search;
     const getProps = props;
 		const id = getProps.recipeId;
-    
 		const [listData, setListData] = React.useState([]);
   
     React.useEffect(() => {
@@ -19,7 +18,6 @@ import {
 				.then((res) => {
           console.log(res);
 					setListData(res.data.result.data);
-  
         })
         .catch((e) => console.log(e.message))
       }, []); 

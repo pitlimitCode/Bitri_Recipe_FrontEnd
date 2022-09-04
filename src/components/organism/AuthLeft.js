@@ -4,28 +4,16 @@ import {
   Image,
 } from 'react-bootstrap';
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function LeftloginRegis() {
-  
+  let navigate = useNavigate();
   React.useEffect(() => {
     if (localStorage.getItem("token")) {
-      window.location.href = "/";
+      navigate("/");
     }
   }, []);
   
-  // return (
-  //   <>
-  //     {/* <a href="/"> */}
-  //       <Image src={authImage} className="img-fluid" alt="authImage" />
-  //     {/* </a> */}
-      
-  //     <div className='mask' style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}>
-  //       <div className='d-flex justify-content-center align-items-center h-100'>
-  //         <p className='text-white mb-0'>Can you see me?</p>
-  //       </div>
-  //     </div>
-  //   </>
-  // );
   return (
     <>
       <a href="/"><Image className="imageParent" src={authImage} alt="backgroundImage"/></a>

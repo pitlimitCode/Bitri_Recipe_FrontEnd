@@ -5,8 +5,10 @@ import {
 } from 'react-bootstrap';
 import React from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function NewRecipeForm() {
+  let navigate = useNavigate();
   const [isError, setIsError] = React.useState(false);
   const [errorMsg, setErrorMsg] = React.useState("");
   const [isLoading, setIsLoading] = React.useState(false);
@@ -33,12 +35,7 @@ function NewRecipeForm() {
       .then((res) => {
         console.log(res);
         setIsError(false);
-        window.location.href = "/";
-      })
-      .catch((err) => {
-        console.log(err?.response?.data)
-        setIsError(true);
-        setErrorMsg(err?.response?.data);
+        navigate("/");
       })
       .finally(() => {
         setIsLoading(false);
@@ -71,7 +68,6 @@ function NewRecipeForm() {
         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
           <Form.Control as="textarea" placeholder="Steps" rows={5} onChange={(e) => setSteps(e.target.value)} />
         </Form.Group>
-
 
         <Button 
           variant="primary" 

@@ -5,10 +5,10 @@ import {
 } from 'react-bootstrap';
 import React from "react";
 import axios from "axios";
-
-// import {Navigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 
 function LoginForm() {
+  let navigate = useNavigate();
   const [isError, setIsError] = React.useState(false);
   const [errorMsg, setErrorMsg] = React.useState("");
   const [isLoading, setIsLoading] = React.useState(false);
@@ -24,19 +24,22 @@ function LoginForm() {
         password: password,
       })
       .then((res) => {
+        // console.log(res);
         setIsError(false);
-
-      // SET TOKEN
-        // JSON.parse(localStorage.setItem("token", res?.data.show.rows));
-        localStorage.setItem("token", res?.data?.token);
-        localStorage.setItem("name", res?.data?.name);
-        window.location.href = "/";
-        // <Navigate to="/" />
-      })
-      .catch((err) => {
-        console.log(err);
-        setIsError(true);
-        setErrorMsg(err?.response?.data);
+        
+        if (res.data.isValid){
+          localStorage.setItem("token", res?.data?.token);
+          localStorage.setItem("name", res?.data?.name);
+          navigate("/");
+        } else {
+          setIsError(true);
+          setErrorMsg(res?.data.message);
+        }
+      // })
+      // .catch((err) => {
+      //   console.log(err);
+      //   setIsError(true);
+      //   setErrorMsg(err?.response?.data);
       })
       .finally(() => {
         setIsLoading(false);
@@ -47,7 +50,7 @@ function LoginForm() {
     <div className='loginForm'>
       {/* Alert error message */}
       {isError 
-        ? <Alert variant="danger">{errorMsg}</Alert> 
+        ? <Alert variant="danger" className="text-center">{errorMsg}</Alert> 
         : null
       } 
       <Form onSubmit={(e) => e.preventDefault()}>
