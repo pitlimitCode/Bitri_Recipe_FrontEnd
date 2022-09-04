@@ -22,13 +22,13 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# custom
+# # custom
 revisi.md
-.env
+# .env
 
-# google firebase (deploy)
-.firebase
-.firebaserc
-firebase.json
-firebase-debug.log
-databases.rules.json
+# # google firebase (deploy)
+# .firebase
+# .firebaserc
+# firebase.json
+# firebase-debug.log
+# databases.rules.json
