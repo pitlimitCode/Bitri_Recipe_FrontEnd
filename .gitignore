@@ -23,10 +23,11 @@ yarn-debug.log*
 yarn-error.log*
 
 # custom
-.env
 revisi.md
+.env
 
 # google firebase (deploy)
 .firebase
 .firebaserc
 firebase.json
+databases.rules.json
