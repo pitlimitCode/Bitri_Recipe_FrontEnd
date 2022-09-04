@@ -30,4 +30,5 @@ revisi.md
 .firebase
 .firebaserc
 firebase.json
+firebase-debug.log
 databases.rules.json
