@@ -58,6 +58,7 @@ This app was built with some technologies below:
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - [Javascript](https://www.javascript.com/)
 - [React JS](https://reactjs.org)
+- [React-Bootstrap](#)
 - [Axios](https://axios-http.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>

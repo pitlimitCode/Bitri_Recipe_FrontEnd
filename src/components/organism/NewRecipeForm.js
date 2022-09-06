@@ -33,9 +33,18 @@ function NewRecipeForm() {
         },
       })
       .then((res) => {
-        console.log(res);
-        setIsError(false);
-        navigate("/");
+        // console.log(res);
+        if (res.data.isValid){
+          navigate("/");
+        } else {
+          setIsError(true);
+          setErrorMsg(res?.data.message);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        // setIsError(true);
+        // setErrorMsg(err?.response?.data);
       })
       .finally(() => {
         setIsLoading(false);
