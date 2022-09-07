@@ -67,7 +67,12 @@ function EditRecipeForm(props) {
       })
       .then((res) => {
         console.log(res);
-        window.location.reload();
+        if (res.data.isValid){
+          window.location.reload();
+        } else {
+          setIsError(true);
+          setErrorMsg(res?.data.message);
+        }
       })
       .catch((err) => {
         console.log(err?.response?.data)
@@ -120,12 +125,6 @@ function EditRecipeForm(props) {
   return (
     <>
       <Form>
-        {/* Alert error message */}
-        {isError 
-          ? <Alert variant="danger" className="text-center">{errorMsg}</Alert> 
-          : null
-        } 
-
         {isLoading 
           ? (
             <div className="text-center">
@@ -168,6 +167,12 @@ function EditRecipeForm(props) {
           </Row>
           )
         }
+
+        {/* Alert error message */}
+        {isError 
+          ? <Alert variant="danger" className="text-center">{errorMsg}</Alert> 
+          : null
+        } 
 
         {/* FORM EDIT RECIPE NON-IMAGE */}
         <Form.Group className="mb-3">
