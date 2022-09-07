@@ -30,7 +30,7 @@ function LandingPage() {
           <NewestRecipe />
         </Row>
 
-        <Row className="mb-4">
+        <Row className="my-1">
           <h4>All recipe</h4>
         </Row>
         <Row className="mb-4">

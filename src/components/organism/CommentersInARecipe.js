@@ -16,8 +16,12 @@ import {
     React.useEffect(() => {
       axios.get(process.env.REACT_APP_BE_URL + "/comments/new?id_recipe=" + id + "&sort=desc")
 				.then((res) => {
-          console.log(res);
-					setListData(res.data.result.data);
+          // console.log(res);
+          if (res.data.result){
+            setListData(res.data.result.data);
+          } else {
+            setListData(false);
+          }
         })
         .catch((e) => console.log(e.message))
       }, []); 

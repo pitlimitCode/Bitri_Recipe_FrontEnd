@@ -16,10 +16,12 @@ export default function HomeAllRecipe() {
   const [listData, setListData] = React.useState([]);
   const linkRecipe = process.env.REACT_APP_FE_URL + "/detailrecipe/?id=";
   
+  
+  const [SortBy, setSortBy] = React.useState("desc");
   const [Page, setPage] = React.useState(1);
   const limitPerPage = 6;
   React.useEffect(() => {
-    axios.get(`${process.env.REACT_APP_BE_URL}/recipes/pagination/?limit=${limitPerPage}&pages=${Page}&sort=desc`)
+    axios.get(`${process.env.REACT_APP_BE_URL}/recipes/pagination/?limit=${limitPerPage}&pages=${Page}&sort=${SortBy}`)
     // axios.get(process.env.REACT_APP_BE_URL + "/recipes/all/?sort=desc")
       .then((res) => {
         setListData(res.data.result.data);
@@ -28,7 +30,7 @@ export default function HomeAllRecipe() {
           setIsLoading(false);
         }, 1000); // 1500
       });
-  }, [Page])
+  }, [SortBy, Page])
 
   // console.log(listData);
 
@@ -43,20 +45,38 @@ export default function HomeAllRecipe() {
               </Spinner>
             </div>
           ) : (
-            listData.map(data => (
-              <Col key={data.id} xs={6} md={4} className ="parentImagePages mb-4">
-              <Card className="pic100">
-                <Nav.Link href= {`${linkRecipe}${data.id}`}>
-                  <Image 
-                    src={`${process.env.REACT_APP_BE_URL}/${data.image}`} 
-                    className="picImagePages" 
-                    alt="search pic"
-                  />
-                </Nav.Link>
-                <div className="bottom-left-text">{data.name}</div>
-              </Card>
-              </Col>
-            ))
+            <>
+              {/* SELECT - SORT BY */}
+              <Row className="mb-5 position-relative">
+                <Form.Select 
+                  aria-label="Default select example" 
+                  style={{width:"200px"}} 
+                  className="position-absolute top-0 start-50 translate-middle"
+                  onChange={(e) => setSortBy(e.target.value)}
+                >
+                  <option value="desc">Newest</option>
+                  <option value="asc">Older</option>
+                </Form.Select>
+              </Row>
+
+              {/* RESULT SORT BY */}
+              <Row>
+                {listData.map(data => (
+                  <Col key={data.id} xs={6} md={4} className ="parentImagePages mb-4">
+                  <Card className="pic100">
+                    <Nav.Link href= {`${linkRecipe}${data.id}`}>
+                      <Image 
+                        src={`${process.env.REACT_APP_BE_URL}/${data.image}`} 
+                        className="picImagePages" 
+                        alt="search pic"
+                      />
+                    </Nav.Link>
+                    <div className="bottom-left-text">{data.name}</div>
+                  </Card>
+                  </Col>
+                ))}
+              </Row>
+            </>
           )
         }
       </Row> 

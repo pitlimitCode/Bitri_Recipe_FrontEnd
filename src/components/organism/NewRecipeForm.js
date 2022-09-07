@@ -34,11 +34,17 @@ function NewRecipeForm() {
       })
       .then((res) => {
         // console.log(res);
-        if (res.data.isValid){
-          navigate("/");
-        } else {
+        if (res.data.message == 'jwt expired'){
+          // console.log('expire woi');
           setIsError(true);
-          setErrorMsg(res?.data.message);
+          setErrorMsg("Your out of Time autentification, please Logout then Login again");
+        } else {
+          if (res.data.isValid){
+            navigate("/");
+          } else {
+            setIsError(true);
+            setErrorMsg(res?.data.message);
+          }
         }
       })
       .catch((err) => {
@@ -56,7 +62,7 @@ function NewRecipeForm() {
       <Form>
         {/* Alert error message */}
         {isError 
-          ? <Alert variant="danger">{errorMsg}</Alert> 
+          ? <Alert variant="danger" className="text-center">{errorMsg}</Alert> 
           : null
         } 
 

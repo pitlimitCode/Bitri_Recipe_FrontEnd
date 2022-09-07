@@ -4,10 +4,12 @@ import {
   Col, 
   Image,
 	Spinner,
+  Button,
 } from 'react-bootstrap';
 
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from "axios";
+import { useNavigate, Link } from "react-router-dom";
 
 import NavbarPage from "../components/organism/NavbarPage";
 import FormComment from "../components/organism/FormComment";
@@ -18,25 +20,30 @@ import FooterBottom from "../components/organism/FooterBottom";
 import { useLocation } from 'react-router-dom';
 
 export default function DetailRecipe() {
+  let navigate = useNavigate();
   const search = useLocation().search;
   const id = new URLSearchParams(search).get('id');
   // console.log(id);
-  const [recipeName, setRecipeName] = React.useState("");
-  const [recipeImage, setRecipeImage] = React.useState("");
-  const [recipeIngre, setRecipeIngre] = React.useState("");
-  const [recipeSteps, setRecipeSteps] = React.useState("");
-  const [isLoading, setIsLoading] = React.useState([]);
+  const [recipeId, setRecipeId] = useState("");
+  const [recipeByIdUser, setRecipeByIdUser] = useState("");
+  const [recipeName, setRecipeName] = useState("");
+  const [recipeImage, setRecipeImage] = useState("");
+  const [recipeIngre, setRecipeIngre] = useState("");
+  const [recipeSteps, setRecipeSteps] = useState("");
+  const [isLoading, setIsLoading] = useState([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     axios.get(process.env.REACT_APP_BE_URL + "/recipes/id/" + id)
       .then((res) => {
         // console.log(res);
         // video: null
         
         // console.log(res.data.data[0]);
-        console.log(res.data.data[0].ingredients);
+        // console.log("ingredients text: ", res.data.data[0].ingredients);
         // console.log(JSON.parse(res.data.data[0].ingredients));
 
+        setRecipeId(res.data.data[0].id);
+        setRecipeByIdUser(res.data.data[0].id_user);
         setRecipeName(res.data.data[0].name);
         setRecipeImage(res.data.data[0].image);
         setRecipeIngre(res.data.data[0].ingredients);
@@ -48,8 +55,27 @@ export default function DetailRecipe() {
       })
       .finally(() => {
         setIsLoading(false);
-      }, []);
+      }, [recipeImage]);
   }); 
+
+  // CHECK USER IF NOT LOGIN = DID'T SHOW COMMENT BOX
+  const [isLogin, setIsLogin] = useState(false);
+  useEffect(() => {
+    if (localStorage.getItem('token')) {
+      setIsLogin(true);
+    } else {
+      setIsLogin(false);
+    }
+  }, []);
+
+
+  // AXIOS USER - GET ID
+  const [IdUser, setIdUser] = React.useState("");
+  axios.get(process.env.REACT_APP_BE_URL + "/users/getid")
+    .then( async (res) => {
+      // console.log(res);
+      setIdUser(res.data.id)
+    }).catch((e) => console.log(e.message));
 
   return (
     <>
@@ -59,36 +85,55 @@ export default function DetailRecipe() {
           <Row>
             <Col></Col>
             <Col md={9} className='mx-auto'>
-              <h1 className="my-4 text-center">{recipeName}</h1>
+              <h1 className="mt-4 mb-2 text-center">{recipeName}</h1>
 
-              <Row className='mb-5'>
-                <Col md={1}/>
-
-                <Col md={10}>
-                {isLoading 
+              {/* BUTTON TO EDIT / DELETE RECIPE */}
+              {isLoading 
+                ? ( null
+                ) : (
+                  (recipeByIdUser == IdUser) 
                   ? (
-                    <div className="text-center">
-                      <Spinner animation="border" role="status">
-                        <span className="visually-hidden">Loading...</span>
-                      </Spinner>
-                    </div>
-                  ) : (
-                    <Image src={`${process.env.REACT_APP_BE_URL}/${recipeImage}`} alt="recipe pic" className="detailRecipeImage center"></Image>
-                  )
-                }
-                </Col>
-                <Col md={1}>
+                    <Link to={`/editrecipe/?id=${recipeId}`}>
+                      <Button variant="outline-success" size="sm" className='my-2 center'> edit / delete ? </Button>
+                    </Link>
+                  ) : ( null ) 
+                )
+              }
 
-                  {/* ganti gambar auth */}
-                </Col>
-              </Row>
+              {isLoading 
+                ? (
+                  <div className="text-center">
+                    <Spinner animation="border" role="status">
+                      <span className="visually-hidden">Loading...</span>
+                    </Spinner>
+                  </div>
+                ) : (
+                <Row className='mb-5'>
+                  <Col md={1}/>
+
+                  {/* IMAGE RECIPE */}
+                  <Col md={10}>
+                    <Image src={`${process.env.REACT_APP_BE_URL}/${recipeImage}`} alt="recipe pic" className="detailRecipeImage center"></Image>
+                  </Col>
+
+                  {/* BUTTON DELETE RECIPE */}
+                  <Col md={1}/>
+
+                </Row>
+                )
+              }
+
               <h4 className="textLeft">Ingredients</h4>
               <p className="textLeft mb-5">{recipeIngre}</p>
 
               <h4 className="textLeft">Steps</h4>
               <p className="textLeft mb-5 ">{recipeSteps}</p>
 
-            <FormComment recipeId={id} />
+            {isLogin ? (
+              <FormComment recipeId={id} />
+            ) : (
+              null
+            )}
 
             <h4 className="textLeft">Comment</h4>
             <CommentersInARecipe recipeId={id} />

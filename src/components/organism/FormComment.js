@@ -1,6 +1,7 @@
 import {
   Form,
   Button,
+  Alert
 } from 'react-bootstrap';
 import React from "react";
 import axios from "axios";
@@ -14,6 +15,8 @@ export default function FormComment(props) {
   // let navigate = useNavigate();
 
   // const [isLoading, setIsLoading] = React.useState(false);
+  const [isError, setIsError] = React.useState(false);
+  const [errorMsg, setErrorMsg] = React.useState("");
   const [Comment, setComment] = React.useState("");
 
   const handleNewComment = () => {
@@ -24,10 +27,18 @@ export default function FormComment(props) {
         comment_text: Comment, 
       })
       .then((res) => {
-        // console.log(res);
-        // navigate(`?id=${recipe_id}`);
-        // window.location.href = `${process.env.REACT_APP_FE_URL}/detailrecipe/?id=${recipe_id}`;
-        window.location.reload();
+        setIsError(false);
+        console.log(res);
+
+        if (res.data.message == 'jwt expired'){
+          // console.log('expire woi');
+          setIsError(true);
+          setErrorMsg("Your out of Time autentification, please Logout then Login again");
+        } else {
+          // navigate(``);
+          window.location.reload();
+        }
+
       }, []); 
   };
 
@@ -41,6 +52,11 @@ export default function FormComment(props) {
           placeholder="You can comment to this recipe, here ..." rows={3} 
         />
       </Form.Group>
+      {/* Alert error message */}
+      {isError 
+        ? <Alert variant="danger" className="text-center">{errorMsg}</Alert> 
+        : null
+      } 
       <Button 
         variant="primary"
         // type="submit"
