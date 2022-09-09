@@ -56,7 +56,7 @@ export default function Profile() {
     <Container className="mt-4">
       {/* AVATAR USER */}
       {/* {console.log(`${process.env.REACT_APP_BE_URL}/${avatar}`)} */}
-      <Image src={`${process.env.REACT_APP_BE_URL}/${avatar}`} alt='user avatar' className="avatar center" />
+      <Image src={`${avatar}`} alt='user avatar' className="avatar center" />
       
       <input type="file"
         onChange={(e) => setChangeAvatar(e.target.files[0])} 

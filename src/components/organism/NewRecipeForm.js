@@ -33,7 +33,7 @@ function NewRecipeForm() {
         },
       })
       .then((res) => {
-        // console.log(res);
+        console.log(res);
         if (res.data.message == 'jwt expired'){
           // console.log('expire woi');
           setIsError(true);

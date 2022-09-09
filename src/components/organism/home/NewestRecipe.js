@@ -77,7 +77,7 @@ export default function HomeNewestRecipe() {
           <>
             <Col xs={6} md={6} className ="parentImagePages">
               <Image 
-                src={`${process.env.REACT_APP_BE_URL}/${imageUpdate}`} 
+                src={`${imageUpdate}`} 
                 alt="search pic" 
                 className="pic100" 
               />

@@ -139,7 +139,7 @@ function EditRecipeForm(props) {
             {/* IMAGE RECIPE */}
             <Col md={8}>
               <div>
-                <Image src={`${process.env.REACT_APP_BE_URL}/${recipeImage}`} alt="recipe pic" className="detailRecipeImage center"></Image>
+                <Image src={`${recipeImage}`} alt="recipe pic" className="detailRecipeImage center"></Image>
                 {/* EDIT IMAGE RECIPE */}
                 <input type="file"
                   onChange={(e) => setEditImage(e.target.files[0])} 

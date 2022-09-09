@@ -51,7 +51,7 @@ export default function ProfileAuthRecipe() {
               <Card className="pic100">
                 <Nav.Link href= {`${linkRecipe}${data.id_recipe}`}>
                   <Image 
-                    src={`${process.env.REACT_APP_BE_URL}/${data.image}`} 
+                    src={`${data.image}`} 
                     className="picImagePages" 
                     alt="search pic"
                   />
@@ -73,7 +73,7 @@ export default function ProfileAuthRecipe() {
               <Card className="pic100">
                 <Nav.Link href= {`${linkRecipe}${data.id_recipe}`}>
                   <Image 
-                    src={`${process.env.REACT_APP_BE_URL}/${data.image}`} 
+                    src={`${data.image}`} 
                     className="picImagePages" 
                     alt="search pic"
                   />

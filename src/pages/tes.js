@@ -1,46 +1,54 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { Form, Button } from "react-bootstrap";
+import { useSelector, useDispatch } from "react-redux";
+import { getLogin } from "../redux/actions";
 
-import axios from "axios";
-import BootstrapTable from "react-bootstrap-table-next";
-import PaginationFactory from "react-bootstrap-table2-paginator";
-import * as ReactBootstrap from "react-bootstrap";
+export default function Login() {
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state.user);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-export default function tes() {
-  const [players, setPlayers] = React.useState([]);
-  const [isLoading, setIsLoading] = React.useState(false);
-  const getPlayersData = async () => {
-    try {
-      const data =await axios.get("https://nba-players.herokuapp.com/players-stats");
-      console.log(data);
-      setPlayers(data.data);
-      setIsLoading(true);
-    } catch (e) {
-      console.log(e);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if(email && password){
+      if (state.email == email && state.pass == password) {
+        dispatch(getLogin());
+        window.location.href = "/tes2";
+      } else {
+        alert("Credentials did not match");
+      }
+    }else{
+      alert("Wrong Credentials")
     }
   }
 
-  const columns = [
-    { dataField: "name", text: "Player Name" },
-    { dataField: "points_per-game", text: "Points Per Game" },
-    { dataField: "team_name", text: "Player Team" },
-  ];
+  return(
+    <section className='section bg-light'>
+      <div className='container ht-100 d-flex justify-content-center align-items-center'>
+        <div className='card p-2 shadow-lg d-flex card-width-300 justify-content-center align-items-center'>
+          <h3 className="mb-3">Login</h3>
+          <Form onSubmit={handleSubmit}>
+            <Form.Group className="mb-3" controlId="email">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control type="email" placeholder="Enter email"
+              value={email} onChange={(e) => setEmail(e.target.value)}/>
+              <Form.Text className="text-muted">
+                We will never share your email with anyone else.
+              </Form.Text>
+            </Form.Group>
 
-  useEffect(() => {
-    getPlayersData();
-  }, []);
-  
-  return (
-    <>
-      {loading ? (
-        <BootstrapTable
-          keyField="name"
-          data={players}
-          columns={columns}
-          pagination={PaginationFactory()}
-        />
-      ) : (
-        <ReactBootstrap.Spinner animation="border" />
-      )}
-    </>
+            <Form.Group className="mb-3" controlId="password">
+              <Form.Label>Password</Form.Label>
+              <Form.Control type="password" placeholder="Password" 
+              value={password} onChange={(e) => setPassword(e.target.value)}/>
+            </Form.Group>
+            <Button variant="primary" type="submit">
+              Submit
+            </Button>
+          </Form>
+        </div>
+      </div>
+    </section>
   )
-};
+}

@@ -34,7 +34,7 @@ import {
             <Row key={data.id} className='mb-3'>
               <Col sm={1} className='me-3'>
                 <Image 
-                  src={`${process.env.REACT_APP_BE_URL}/${data.avatar}`} 
+                  src={`${data.avatar}`} 
                   // id='avatarDetailRecipe'
                   width='60px'
                   height='60px'

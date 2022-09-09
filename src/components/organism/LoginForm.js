@@ -89,3 +89,14 @@ function LoginForm() {
 }
 
 export default LoginForm;
+
+// const mapStateToProps = (state) => ({
+//   auth: state.auth,
+// });
+
+// const mapDispatchToProps = (dispatch) => ({
+//   setProfile: (data) => dispatch({ type: "SET_PROFILE", data: data }),
+//   authRequestLogin: (data) => dispatch(authRequest(data)),
+// });
+
+// export default connect(mapStateToProps, mapDispatchToProps)(Login);

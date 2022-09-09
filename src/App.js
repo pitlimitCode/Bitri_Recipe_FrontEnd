@@ -2,9 +2,11 @@ import './App.css';
 import { 
   Routes,
   Route,
-  // useParams ,
-
 } from 'react-router-dom';
+
+import React from "react";
+import axios from "axios";
+import { useSelector} from 'react-redux';
 
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -15,15 +17,14 @@ import Profile from "./pages/Profile";
 import DetailRecipe from "./pages/DetailRecipe";
 import SearchRecipePage from './pages/SearchRecipePage';
 // import UrlNotFound from "./pages/UrlNotFound";
-// import Tes from "./pages/tes";
 
-import React from "react";
-import axios from "axios";
+// import Tes from "./pages/tes";
+// import Tes2 from "./pages/tes2";
+// import ProtectedRoute from "./redux/protectedRoutes";
 
 export default function App() {
   // console.log(process.env);
   // console.log(process.env.REACT_APP_BE_URL);
-
   // console.log(localStorage.getItem("token"));
 
   axios.interceptors.request.use(
@@ -40,11 +41,21 @@ export default function App() {
   
   // let { userId } = useParams();
   // console.log(useParams());
+  // userActive: `${localStorage.getItem("token")}`
 
-  //  userActive: `${localStorage.getItem("token")}`
+  // const token = useSelector(state => state.auth.isLoggedIn);
+  // const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
 
+  // console.log(token);
+  // console.log(isLoggedIn);
+  // if (localStorage.getItem("token")) {
+  //   console.log(isLoggedIn);
+  // } else { 
+  //   console.log(isLoggedIn);
+  // }
   return (
      <>
+     
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="login" element={<Login />} />
@@ -55,7 +66,11 @@ export default function App() {
         <Route path="editrecipe" element={<EditRecipe />} />
         <Route path="search" element={<SearchRecipePage />} />
         {/* <Route path="*" element={<UrlNotFound />} /> */}
-        {/* <Route path="tes" element={<Tes />} /> */}
+
+        
+        {/* <ProtectedRoute auth={auth} exact path="/tes" component={<Tes />} /> */}
+        {/* <Route path="/tes" element={<Tes />} /> */}
+        {/* <Route path="/tes2" element={<Tes2 />} /> */}
       </Routes>
     </>
   );

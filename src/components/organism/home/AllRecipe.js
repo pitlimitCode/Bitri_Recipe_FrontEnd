@@ -66,7 +66,7 @@ export default function HomeAllRecipe() {
                   <Card className="pic100">
                     <Nav.Link href= {`${linkRecipe}${data.id}`}>
                       <Image 
-                        src={`${process.env.REACT_APP_BE_URL}/${data.image}`} 
+                        src={`${data.image}`} 
                         className="picImagePages" 
                         alt="search pic"
                       />

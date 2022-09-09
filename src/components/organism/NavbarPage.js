@@ -4,7 +4,7 @@ import {
   Nav, 
 } from 'react-bootstrap';
 import React, {useState, useEffect} from "react";
-import axios from "axios";
+// import axios from "axios";
 
 export default function NavbarPage() {
   // Log Out = Remove data in local storage.
@@ -68,8 +68,8 @@ export default function NavbarPage() {
             <Nav.Link className="navlink textcolor1" href="/">Home</Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link className="navlink textcolor1" href="login">Login</Nav.Link>
-            <Nav.Link className="navlink textcolor1" href="register">Register</Nav.Link>
+            <Nav.Link className="navlink textcolor1" href={`${process.env.REACT_APP_FE_URL}/login`}>Login</Nav.Link>
+            <Nav.Link className="navlink textcolor1" href={`${process.env.REACT_APP_FE_URL}/register`}>Register</Nav.Link>
           </Nav>
         </Navbar>
       )}

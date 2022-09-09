@@ -9,7 +9,10 @@ import {
 
 import React, {useState, useEffect} from 'react';
 import axios from "axios";
-import { useNavigate, Link } from "react-router-dom";
+import { 
+  // useNavigate, 
+  Link 
+} from "react-router-dom";
 
 import NavbarPage from "../components/organism/NavbarPage";
 import FormComment from "../components/organism/FormComment";
@@ -20,7 +23,7 @@ import FooterBottom from "../components/organism/FooterBottom";
 import { useLocation } from 'react-router-dom';
 
 export default function DetailRecipe() {
-  let navigate = useNavigate();
+  // let navigate = useNavigate();
   const search = useLocation().search;
   const id = new URLSearchParams(search).get('id');
   // console.log(id);
@@ -74,7 +77,7 @@ export default function DetailRecipe() {
   axios.get(process.env.REACT_APP_BE_URL + "/users/getid")
     .then( async (res) => {
       // console.log(res);
-      setIdUser(res.data.id)
+      setIdUser(res?.data?.id)
     }).catch((e) => console.log(e.message));
 
   return (
@@ -113,7 +116,7 @@ export default function DetailRecipe() {
 
                   {/* IMAGE RECIPE */}
                   <Col md={10}>
-                    <Image src={`${process.env.REACT_APP_BE_URL}/${recipeImage}`} alt="recipe pic" className="detailRecipeImage center"></Image>
+                    <Image src={`${recipeImage}`} alt="recipe pic" className="detailRecipeImage center"></Image>
                   </Col>
 
                   {/* BUTTON DELETE RECIPE */}
