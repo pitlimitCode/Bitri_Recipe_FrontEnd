@@ -11,59 +11,43 @@ import {
   Card,
 	Spinner,
 } from 'react-bootstrap';
+import { useLocation, useNavigate } from "react-router-dom";
 
 import NavbarPage from "../components/organism/NavbarPage";
 import FooterTop from "../components/organism/FooterTop";
 import FooterBottom from "../components/organism/FooterBottom";
 
-// import { Link } from "react-router-dom";
-import { useLocation } from 'react-router-dom';
-
 export default function SearchRecipePage() {
+  let navigate = useNavigate();
   const search = useLocation().search;
   const name = new URLSearchParams(search).get('name');
-  // console.log(name);
 
   const [isLoading, setIsLoading] = React.useState(true);
   const [listData, setListData] = React.useState([]);
   const linkRecipe = process.env.REACT_APP_FE_URL + "/detailrecipe/?id=";
 
   const [searching, setSearching] = React.useState([]);
-  // console.log(searching);
-  const linkSearchByName = () => {
-    window.location.href = process.env.REACT_APP_FE_URL + "/search/?name=" + searching;
-  };
+  const linkSearchByName = () => { navigate(`/search/?name=${searching}`); };
 
   React.useEffect(() => {
-
-		setTimeout(() => {
-			setIsLoading(false);
-
-				axios.get(process.env.REACT_APP_BE_URL + "/recipes/name/" + name)
-					.then((res) => {
-						// console.log(res.data);
-						// console.log(res.data.result.data);
-						// console.log(res.data.message);
-						if (res.data.result){
-							setListData(res.data.result.data);
-						} else {
-							setListData(res.data);
-						}
-					})
-					.catch((err) => {
-						// console.log(err);
-						setIsLoading(false);
-					})
-					.finally(() => {
-						setIsLoading(false);
-					});
-
-		}, 1000);
-
-  }, []);
-
+		// setIsLoading(false);
+		axios.get(process.env.REACT_APP_BE_URL + "/recipes/name/" + name)
+			.then((res) => {
+				// console.log(res.data);
+				if (res.data.result){
+					setListData(res.data.result.data);
+				} else {
+					setListData(res.data);
+				}
+			})
+			.catch((err) => {
+				console.log(err);
+			})
+			.finally(() => {
+				setIsLoading(false);
+			});
+  }, [name]);
     // console.log(listData);
-
   return (
     <>
     <NavbarPage/>

@@ -6,31 +6,45 @@ import {
 
 import React from 'react';
 import axios from "axios";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import NavbarPage from "../components/organism/NavbarPage";
 import ProfileAuthRecipe from "../components/organism/ProfileAuthRecipe";
 import FooterBottom from "../components/organism/FooterBottom";
 
 export default function Profile() {
+  let navigate = useNavigate();
+
+  const reduxconst = useSelector(state => state);
+  // console.log(reduxconst.auth.isLogin);
+  React.useEffect(() => {
+    if (reduxconst.auth.isLogin == false) {
+      navigate("/");
+    }
+  }, [])
+
   const [IdUser, setIdUser] = React.useState("");
   const [userName, setUserName] = React.useState("");
   const [avatar, setAvatar] = React.useState("");
   const [ChangeAvatar, setChangeAvatar] = React.useState("");
   
   // AXIOS USER - GET ID AND SHOW AVATAR AND IMAGE
-  axios.get(process.env.REACT_APP_BE_URL + "/users/getid")
-    .then( async (res) => {
-      // console.log(res);
-      setIdUser(res.data.id)
+  React.useEffect(() => {
+    axios.get(process.env.REACT_APP_BE_URL + "/users/getid")
+      .then((res) => {
+        // console.log(res);
+        setIdUser(res.data.id)
 
-      await axios.get(process.env.REACT_APP_BE_URL + "/users/id/" + IdUser)
-        .then((resprofile) => {
-          // console.log(resprofile);
-          setUserName(resprofile.data.data.name)
-          setAvatar(resprofile.data.data.avatar)
-        }).catch((e) => console.log(e.message));
+        axios.get(process.env.REACT_APP_BE_URL + "/users/id/" + IdUser)
+          .then((resprofile) => {
+            // console.log(resprofile);
+            setUserName(resprofile.data.data?.name)
+            setAvatar(resprofile.data.data?.avatar)
+          }).catch((e) => console.log(e.message));
 
-    }).catch((e) => console.log(e.message));
+      }).catch((e) => console.log(e.message));
+  }, [IdUser]);
 
   // CHANGE AVATAR USER
   const formData = new FormData();

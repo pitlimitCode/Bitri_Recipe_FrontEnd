@@ -1,12 +1,18 @@
-import { configureStore } from "@reduxjs/toolkit";
-// import authSlice from "./auth-slice";
-import reducer from "./reducer";
+import {  legacy_createStore as createStore } from 'redux'
+import { persistStore, persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
 
-const store = configureStore({
-  reducer: {
-    // token: localStorage.getItem("token").reducer,
-    auth: reducer.reducer,
-  }
-})
+import rootReducer from './reducer'
+ 
+const persistConfig = {
+  key: 'root',
+  storage,
+}
+ 
+const persistedReducer = persistReducer(
+  persistConfig, 
+  rootReducer
+)
 
-export default store;
+export const store = createStore(persistedReducer)
+export const persistor = persistStore(store, {});

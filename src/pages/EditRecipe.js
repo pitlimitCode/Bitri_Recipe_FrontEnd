@@ -4,6 +4,8 @@ import {
   Col, 
 } from 'react-bootstrap';
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import NavbarPage from "../components/organism/NavbarPage";
 import EditRecipeForm from "../components/organism/EditRecipeForm";
@@ -13,16 +15,17 @@ import FooterBottom from "../components/organism/FooterBottom";
 import { useLocation } from 'react-router-dom';
 
 function EditRecipe() {
+  let navigate = useNavigate();
+  const reduxconst = useSelector(state => state);
+  const search = useLocation().search;
+  const id = new URLSearchParams(search).get('id');
+
   React.useEffect(() => {
-    if (!localStorage.getItem("token")) {
-      window.location.href = "login";
+    if (reduxconst.auth.token == false) {
+      navigate("/login");
     }
   }, []);
 
-  const search = useLocation().search;
-  const id = new URLSearchParams(search).get('id');
-  // console.log(id);
-  
   return (
     <>
     <div className='NewRecipe'>

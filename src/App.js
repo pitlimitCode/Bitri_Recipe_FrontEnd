@@ -1,12 +1,8 @@
 import './App.css';
-import { 
-  Routes,
-  Route,
-} from 'react-router-dom';
-
+import { Routes, Route } from 'react-router-dom';
 import React from "react";
 import axios from "axios";
-import { useSelector} from 'react-redux';
+import {useSelector} from 'react-redux';
 
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -16,36 +12,25 @@ import EditRecipe from "./pages/EditRecipe";
 import Profile from "./pages/Profile";
 import DetailRecipe from "./pages/DetailRecipe";
 import SearchRecipePage from './pages/SearchRecipePage';
-// import UrlNotFound from "./pages/UrlNotFound";
-
+import UrlNotFound from "./pages/UrlNotFound";
 // import Tes from "./pages/tes";
 // import Tes2 from "./pages/tes2";
-// import ProtectedRoute from "./redux/protectedRoutes";
 
 export default function App() {
-  // console.log(process.env);
-  // console.log(process.env.REACT_APP_BE_URL);
-  // console.log(localStorage.getItem("token"));
-
+  const reduxconst = useSelector(state => state);
+  // console.log(reduxconst);
   axios.interceptors.request.use(
     function (config) {
-      if (localStorage.getItem("token")) {
+      if(reduxconst.auth.isLogin){
         config.headers = {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-          User_name: localStorage.getItem("name")
+          Authorization: `Bearer ${reduxconst.auth.token}`
         };
       }
       return config;
     }
-  )
-  
-  // let { userId } = useParams();
-  // console.log(useParams());
-  // userActive: `${localStorage.getItem("token")}`
+  );
 
   // const token = useSelector(state => state.auth.isLoggedIn);
-  // const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
-
   // console.log(token);
   // console.log(isLoggedIn);
   // if (localStorage.getItem("token")) {
@@ -65,10 +50,8 @@ export default function App() {
         <Route path="newRecipe" element={<NewRecipe />} />
         <Route path="editrecipe" element={<EditRecipe />} />
         <Route path="search" element={<SearchRecipePage />} />
-        {/* <Route path="*" element={<UrlNotFound />} /> */}
+        <Route path="*" element={<UrlNotFound />} />
 
-        
-        {/* <ProtectedRoute auth={auth} exact path="/tes" component={<Tes />} /> */}
         {/* <Route path="/tes" element={<Tes />} /> */}
         {/* <Route path="/tes2" element={<Tes2 />} /> */}
       </Routes>

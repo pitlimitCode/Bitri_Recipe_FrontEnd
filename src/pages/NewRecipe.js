@@ -1,19 +1,20 @@
-import { 
-  Container,
-  Row, 
-  Col, 
-} from 'react-bootstrap';
+import { Container,Row, Col } from 'react-bootstrap';
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from 'react-redux';
 
 import NavbarPage from "../components/organism/NavbarPage";
 import NewRecipeForm from "../components/organism/NewRecipeForm";
 import FooterTop from "../components/organism/FooterTop";
 import FooterBottom from "../components/organism/FooterBottom";
 
-function NewRecipe() {
+export default function NewRecipe() {
+  let navigate = useNavigate();
+  const reduxconst = useSelector(state => state);
+
   React.useEffect(() => {
-    if (!localStorage.getItem("token")) {
-      window.location.href = "login";
+    if (reduxconst.auth.isLogin == false) {
+      navigate("/login");
     }
   }, []);
   
@@ -21,7 +22,6 @@ function NewRecipe() {
     <>
     <div className='NewRecipe'>
       <NavbarPage />
-
 
       <Container>
         <h1 className="my-5 text-center">Add Your New Recipe</h1>
@@ -34,12 +34,9 @@ function NewRecipe() {
         </Row>
       </Container>
 
-
       <FooterTop />
       <FooterBottom />
     </div>
     </>
   );
-}
-
-export default NewRecipe;
+};

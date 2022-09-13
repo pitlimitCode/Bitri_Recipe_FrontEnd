@@ -6,27 +6,26 @@ import {
 } from 'react-bootstrap';
 
 import React from "react";
+import { useNavigate } from "react-router-dom";
 // import axios from "axios";
 import searchRecipe from '../../../assets/default/searchRecipe.png';
 
 export default function HomeSearchRecipe() {
-  // const [imageRandom, setImageRandom] = React.useState([]); /////
   
+  // Set random image untuk HomeSearch?
+  // const [imageRandom, setImageRandom] = React.useState([]);
   // React.useEffect(() => {
-  //   axios.get(process.env.REACT_APP_BE_URL + "/recipes/fivenew") ///// ubah jadi random image
+  //   axios.get(process.env.REACT_APP_BE_URL + "/recipes/fivenew")
   //     .then((res) => {
   //       setImageRandom(res.data.data[2].image_recipe);
   //     } )
   //     .catch((err) => {console.log(err)})
   // });
 
+  let navigate = useNavigate();
   const [searching, setSearching] = React.useState([]);
-  // console.log(searching);
-  // const linkRecipe = ;
   const linkSearchByName = () => {
-    window.location.href = process.env.REACT_APP_FE_URL + "/search/?name=" + searching;
-    // console.log(searching);
-    // console.log(process.env.REACT_APP_FE_URL + "/search/?name=" + searching);
+    navigate(`/search/?name=${searching}`);
   };
 
   return (

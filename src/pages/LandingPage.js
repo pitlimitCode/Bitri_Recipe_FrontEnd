@@ -1,8 +1,5 @@
 import React from "react";
-import { 
-  Container,
-  Row, 
-} from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 
 import NavbarPage from "../components/organism/NavbarPage";
 import SearchRecipe from '../components/organism/home/SearchRecipe';
@@ -16,6 +13,7 @@ function LandingPage() {
   return (
     <>
     <NavbarPage/>
+    {/* <h1 className="text-center">Landing Page</h1> */}
     <div className='landingPage'>
         
       <Container>

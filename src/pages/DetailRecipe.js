@@ -9,10 +9,8 @@ import {
 
 import React, {useState, useEffect} from 'react';
 import axios from "axios";
-import { 
-  // useNavigate, 
-  Link 
-} from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import NavbarPage from "../components/organism/NavbarPage";
 import FormComment from "../components/organism/FormComment";
@@ -23,7 +21,7 @@ import FooterBottom from "../components/organism/FooterBottom";
 import { useLocation } from 'react-router-dom';
 
 export default function DetailRecipe() {
-  // let navigate = useNavigate();
+  const reduxconst = useSelector(state => state);
   const search = useLocation().search;
   const id = new URLSearchParams(search).get('id');
   // console.log(id);
@@ -38,9 +36,7 @@ export default function DetailRecipe() {
   useEffect(() => {
     axios.get(process.env.REACT_APP_BE_URL + "/recipes/id/" + id)
       .then((res) => {
-        // console.log(res);
         // video: null
-        
         // console.log(res.data.data[0]);
         // console.log("ingredients text: ", res.data.data[0].ingredients);
         // console.log(JSON.parse(res.data.data[0].ingredients));
@@ -62,15 +58,14 @@ export default function DetailRecipe() {
   }); 
 
   // CHECK USER IF NOT LOGIN = DID'T SHOW COMMENT BOX
-  const [isLogin, setIsLogin] = useState(false);
-  useEffect(() => {
-    if (localStorage.getItem('token')) {
-      setIsLogin(true);
-    } else {
-      setIsLogin(false);
-    }
-  }, []);
-
+  // const [isLogin, setIsLogin] = useState(false);
+  // useEffect(() => {
+  //   if (localStorage.getItem('token')) {
+  //     setIsLogin(true);
+  //   } else {
+  //     setIsLogin(false);
+  //   }
+  // }, []);
 
   // AXIOS USER - GET ID
   const [IdUser, setIdUser] = React.useState("");
@@ -132,7 +127,7 @@ export default function DetailRecipe() {
               <h4 className="textLeft">Steps</h4>
               <p className="textLeft mb-5 ">{recipeSteps}</p>
 
-            {isLogin ? (
+            {reduxconst.auth.isLogin ? (
               <FormComment recipeId={id} />
             ) : (
               null

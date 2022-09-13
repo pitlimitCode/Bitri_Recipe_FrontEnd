@@ -23,7 +23,11 @@ export default function ProfileAuthRecipe() {
     axios.get(process.env.REACT_APP_BE_URL + "/users/myrecipes")
       .then((resmyrecipe) => {
         // console.log(resmyrecipe.data.result.data);
-        setMyRecipe(resmyrecipe.data.result.data)
+        if(resmyrecipe.data.result){
+          setMyRecipe(resmyrecipe.data.result.data)
+        } else {
+          setMyRecipe(false)
+        }
       })
       .catch((e) => console.log(e.message));
 
@@ -31,7 +35,11 @@ export default function ProfileAuthRecipe() {
     axios.get(process.env.REACT_APP_BE_URL + "/users/mylikes")
       .then((resmylikes) => {
         // console.log(resmylikes.data.result.data);
-        setMyLikes(resmylikes.data.result.data)
+        if(resmylikes.data.result){
+          setMyLikes(resmylikes.data.result.data)
+        } else {
+          setMyRecipe(false)
+        }
       })
       .catch((e) => console.log(e.message));
 
@@ -46,20 +54,24 @@ export default function ProfileAuthRecipe() {
       <Tab eventKey="1" title="My Recipe">
         <Container>
           <Row>
-            {MyRecipe.map(data => (
-              <Col key={data.id_recipe} xs={6} md={4} className ="parentImagePages mb-4">
-              <Card className="pic100">
-                <Nav.Link href= {`${linkRecipe}${data.id_recipe}`}>
-                  <Image 
-                    src={`${data.image}`} 
-                    className="picImagePages" 
-                    alt="search pic"
-                  />
-                </Nav.Link>
-                <div className="bottom-left-text">{data.recipe_name}</div>
-              </Card>
-              </Col>
-            ))}
+            {
+              (MyRecipe)
+              ? MyRecipe.map(data => (
+                  <Col key={data.id_recipe} xs={6} md={4} className ="parentImagePages mb-4">
+                  <Card className="pic100">
+                    <Nav.Link href= {`${linkRecipe}${data.id_recipe}`}>
+                      <Image 
+                        src={`${data.image}`} 
+                        className="picImagePages" 
+                        alt="search pic"
+                      />
+                    </Nav.Link>
+                    <div className="bottom-left-text">{data.recipe_name}</div>
+                  </Card>
+                  </Col>
+                ))
+              : (null)
+            }
           </Row>
         </Container>
       </Tab>
@@ -68,20 +80,24 @@ export default function ProfileAuthRecipe() {
       <Tab eventKey="2" title="Liked Recipe">
         <Container>
           <Row>
-            {MyLikes.map(data => (
-              <Col key={data.id_like} xs={6} md={4} className ="parentImagePages mb-4">
-              <Card className="pic100">
-                <Nav.Link href= {`${linkRecipe}${data.id_recipe}`}>
-                  <Image 
-                    src={`${data.image}`} 
-                    className="picImagePages" 
-                    alt="search pic"
-                  />
-                </Nav.Link>
-                <div className="bottom-left-text">{data.recipe_name}</div>
-              </Card>
-              </Col>
-            ))}
+            {
+              (MyRecipe)
+              ? MyLikes.map(data => (
+                  <Col key={data.id_like} xs={6} md={4} className ="parentImagePages mb-4">
+                  <Card className="pic100">
+                    <Nav.Link href= {`${linkRecipe}${data.id_recipe}`}>
+                      <Image 
+                        src={`${data.image}`} 
+                        className="picImagePages" 
+                        alt="search pic"
+                      />
+                    </Nav.Link>
+                    <div className="bottom-left-text">{data.recipe_name}</div>
+                  </Card>
+                  </Col>
+                ))
+              : (null)
+            }
           </Row>
         </Container>
       </Tab>

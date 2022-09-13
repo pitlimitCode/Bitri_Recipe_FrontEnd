@@ -34,7 +34,6 @@ function RegisterForm() {
         
         if (res.data.isValid){
           navigate("/login");
-          // window.location.href = "/login";
         } else {
           setIsError(true);
           setErrorMsg(res?.data.message);
@@ -76,12 +75,12 @@ function RegisterForm() {
               <Form.Control size="sm" type="number" placeholder="08xxxxxxxxx" onChange={(e) => setPhoneNumber(e.target.value)} />
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Group className="mb-3" controlId="formPassword1">
               <Form.Label className='fontLabel'>Create new Password</Form.Label>
               <Form.Control size="sm" type="password" placeholder="Create new Password" onChange={(e) => setPass1(e.target.value)} />
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Group className="mb-3" controlId="formPassword2">
               <Form.Label className='fontLabel'>New Password</Form.Label>
               <Form.Control size="sm" type="password" placeholder="New Password" onChange={(e) => setPass2(e.target.value)} />
             </Form.Group>

@@ -6,9 +6,12 @@ import {
 import React from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import * as Type from "../../redux/auth/type";
 
 function LoginForm() {
   let navigate = useNavigate();
+  const dispatch = useDispatch()
   const [isError, setIsError] = React.useState(false);
   const [errorMsg, setErrorMsg] = React.useState("");
   const [isLoading, setIsLoading] = React.useState(false);
@@ -24,12 +27,19 @@ function LoginForm() {
         password: password,
       })
       .then((res) => {
-        // console.log(res);
-        setIsError(false);
-        
         if (res.data.isValid){
-          localStorage.setItem("token", res?.data?.token);
-          localStorage.setItem("name", res?.data?.name);
+          dispatch({
+            type: Type.SET_ISLOGIN,
+            payload: true
+          })
+          dispatch({
+            type: Type.SET_USERNAME,
+            payload: res?.data?.name
+          })
+          dispatch({
+            type: Type.SET_TOKEN,
+            payload: res?.data?.token
+          })
           navigate("/");
         } else {
           setIsError(true);
@@ -68,7 +78,7 @@ function LoginForm() {
           </Form.Group>
         </div>
         <Form.Group  controlId="formBasicCheckbox">
-          <Form.Check className='fontLabel' type="checkbox" label="I agree to terms & conditions" />
+          <Form.Check className='fontLabel' type="checkbox" name={1} value={1} label="I agree to terms & conditions" required />
         </Form.Group>
         <div className="d-grid gap-2">
           <Button 
@@ -89,14 +99,3 @@ function LoginForm() {
 }
 
 export default LoginForm;
-
-// const mapStateToProps = (state) => ({
-//   auth: state.auth,
-// });
-
-// const mapDispatchToProps = (dispatch) => ({
-//   setProfile: (data) => dispatch({ type: "SET_PROFILE", data: data }),
-//   authRequestLogin: (data) => dispatch(authRequest(data)),
-// });
-
-// export default connect(mapStateToProps, mapDispatchToProps)(Login);
