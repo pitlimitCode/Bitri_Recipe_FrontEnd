@@ -31,7 +31,8 @@ export default function SearchRecipePage() {
 
   React.useEffect(() => {
 		// setIsLoading(false);
-		axios.get(process.env.REACT_APP_BE_URL + "/recipes/name/" + name)
+		// axios.get(process.env.REACT_APP_BE_URL + "/recipes/name/" + name)
+		axios.get(`${process.env.REACT_APP_BE_URL}/recipes/name/?name=${name}&sort=desc`)
 			.then((res) => {
 				// console.log(res.data);
 				if (res.data.result){

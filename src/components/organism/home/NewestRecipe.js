@@ -19,7 +19,7 @@ export default function HomeNewestRecipe() {
   
   React.useEffect(() => {
     setIsLoading(true);
-    axios.get(process.env.REACT_APP_BE_URL + "/recipes/fivenew")
+    axios.get(process.env.REACT_APP_BE_URL + "/recipes/all/?sort=desc")
       .then((res) => {
         // setidRecipe(res.data.data[0].id_recipe);
         setUrl(process.env.REACT_APP_FE_URL + "/detailrecipe/?id=" + res.data.result.data[0].id_recipe);
