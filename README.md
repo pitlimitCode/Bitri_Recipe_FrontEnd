@@ -120,7 +120,7 @@ REACT_APP_FE_URL="[YOUR_FRONTEND_URL]"
     <td>Search</td>
   </tr>
   <tr>
-    <td><image src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663208256/bootcamp%20pijarcamp%20project%20cloud%20image/bitri%20desktop/bitri-recipe.web.app_landingpage_znutkr.png" alt="Home" width=100%></td>
+    <td><image src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663208256/bootcamp%20pijarcamp%20project%20cloud%20image/bitri%20desktop/bitri-recipe.web.app_landingpage_znutkr.png" alt="Home" height=20% width=100%></td>
     <td><image src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663208167/bootcamp%20pijarcamp%20project%20cloud%20image/bitri%20desktop/bitri-recipe.web.app_search_uwpas0.png" alt="Search" width=100%></td>
   </tr>
 </table>
