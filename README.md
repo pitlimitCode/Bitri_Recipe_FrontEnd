@@ -56,12 +56,12 @@
 This app was built with some technologies below:
 - [Javascript](https://www.javascript.com/)
 - [React JS](https://reactjs.org)
-- [React-Bootstrap](#)
+- [React-Bootstrap](https://react-bootstrap.github.io/)
 - [Axios](https://axios-http.com/)
-- [Redux](#)
-- [PostgreSQL](#)
-- [Railway.app](#)
-- [Google Firebase](#)
+- [React-Redux](https://react-redux.js.org/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Railway.app](https://railway.app/)
+- [Google Firebase](https://firebase.google.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -108,47 +108,47 @@ REACT_APP_FE_URL="[YOUR_FRONTEND_URL]"
 <table>
  
   <tr>
-    <td>Login Page</td>
     <td>Register Page</td>
+    <td>Login Page</td>
   </tr>
   <tr>
-    <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659351592/portofolio/recipe/login_ukszon.png" alt="Login Page" width=100%></td>
-    <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659351587/portofolio/recipe/register_jsv1kj.png" alt="Register Page" width=100%/></td>
+    <td><image src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663208188/bootcamp%20pijarcamp%20project%20cloud%20image/bitri%20desktop/bitri-recipe.web.app_register_f5mjnq.png" alt="Register Page" width=100%/></td>
+    <td><image src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663208224/bootcamp%20pijarcamp%20project%20cloud%20image/bitri%20desktop/bitri-recipe.web.app_login_abitws.png" alt="Login Page" width=100%></td>
   </tr>
 </table>
 
 <table>
   <tr>
     <td>Home</td>
-    <td>Profile</td>
+    <td>Search</td>
   </tr>
   <tr>
-    <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659255590/portofolio/recipe/Home_az4b40.png" alt="Home" width=100%></td>
-    <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659351616/portofolio/recipe/profile_mkvlj8.png" alt="profile" width=100%/></td>
-  </tr>
-</table>
-
-<table>
-  <tr>
-    <td>Add Recipe</td>
-    <td>Edit Recipe</td>
-  </tr>
-  <tr>
-    <tr>
-    <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659359397/portofolio/recipe/Add_Recipe_ui9vgx.png" alt="add rec" width=100%></td>
-    <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659255601/portofolio/recipe/Edit_Profile_dssupf.png" alt="edit rec" width=100%/></td>
+    <td><image src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663208256/bootcamp%20pijarcamp%20project%20cloud%20image/bitri%20desktop/bitri-recipe.web.app_landingpage_znutkr.png" alt="Home" width=100%></td>
+    <td><image src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663208167/bootcamp%20pijarcamp%20project%20cloud%20image/bitri%20desktop/bitri-recipe.web.app_search_uwpas0.png" alt="Search" width=100%/></td>
   </tr>
 </table>
 
 <table>
   <tr>
     <td>Detail Recipe</td>
-    <td>image</td>
+    <td>Edit Recipe</td>
   </tr>
   <tr>
     <tr>
-    <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659255614/portofolio/recipe/detailRecipe_mgby3w.png" alt="detail rec" width=100%></td>
-    <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659255615/portofolio/recipe/detailVideo_rpajes.png" alt="image" width=100%/></td>
+    <td><image src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663208077/bootcamp%20pijarcamp%20project%20cloud%20image/bitri%20desktop/bitri-recipe.web.app_detailrecipe_iv1ogb.png" alt="Detail Recipe" width=100%></td>
+    <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659255601/portofolio/recipe/Edit_Profile_dssupf.png" alt="Edit Recipe" width=100%/></td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td>Add Recipe</td>
+    <td>Profile</td>
+  </tr>
+  <tr>
+    <tr>
+    <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659255614/portofolio/recipe/detailRecipe_mgby3w.png" alt="Add Recipe" width=100%></td>
+    <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659255615/portofolio/recipe/detailVideo_rpajes.png" alt="Profile" width=100%/></td>
   </tr>
 </table>
       
