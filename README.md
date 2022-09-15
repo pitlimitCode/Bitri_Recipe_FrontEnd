@@ -106,8 +106,6 @@ REACT_APP_FE_URL="[YOUR_FRONTEND_URL]"
 ## Screenshoots
 <p align="center" display=flex>
 
-<image src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663208256/bootcamp%20pijarcamp%20project%20cloud%20image/bitri%20desktop/bitri-recipe.web.app_landingpage_znutkr.png" alt="Home"/>
-
 <table>
   <tr>
     <td>Register Page</td>
@@ -117,6 +115,9 @@ REACT_APP_FE_URL="[YOUR_FRONTEND_URL]"
     <td><image src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663208188/bootcamp%20pijarcamp%20project%20cloud%20image/bitri%20desktop/bitri-recipe.web.app_register_f5mjnq.png" alt="Register Page" width=100%/></td>
     <td><image src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663208224/bootcamp%20pijarcamp%20project%20cloud%20image/bitri%20desktop/bitri-recipe.web.app_login_abitws.png" alt="Login Page" width=100%></td>
   </tr>
+</table>
+  
+<table>
   <tr>
     <td>Home</td>
     <td>Search</td>
