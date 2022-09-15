@@ -106,25 +106,6 @@ REACT_APP_FE_URL="[YOUR_FRONTEND_URL]"
 ## Screenshoots
 <p align="center" display=flex>
 
-
-<table>
-  <tr>
-    <td>Home</td>
-  </tr>
-  <tr>
-    <td><image src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663208256/bootcamp%20pijarcamp%20project%20cloud%20image/bitri%20desktop/bitri-recipe.web.app_landingpage_znutkr.png" alt="Home" width=50%></td>
-  </tr>
-</table>
-
-<table>
-  <tr>
-    <td>Search</td>
-  </tr>
-  <tr>
-    <td><image src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663208167/bootcamp%20pijarcamp%20project%20cloud%20image/bitri%20desktop/bitri-recipe.web.app_search_uwpas0.png" alt="Search" width=50%></td>
-  </tr>
-</table>
-
 <table>
   <tr>
     <td>Register Page</td>
@@ -134,9 +115,6 @@ REACT_APP_FE_URL="[YOUR_FRONTEND_URL]"
     <td><image src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663208188/bootcamp%20pijarcamp%20project%20cloud%20image/bitri%20desktop/bitri-recipe.web.app_register_f5mjnq.png" alt="Register Page" width=100%/></td>
     <td><image src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663208224/bootcamp%20pijarcamp%20project%20cloud%20image/bitri%20desktop/bitri-recipe.web.app_login_abitws.png" alt="Login Page" width=100%></td>
   </tr>
-</table>
-
-<table>
   <tr>
     <td>Detail Recipe</td>
     <td>Edit Recipe</td>
