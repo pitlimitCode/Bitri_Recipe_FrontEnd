@@ -136,7 +136,7 @@ REACT_APP_FE_URL="[YOUR_FRONTEND_URL]"
   <tr>
     <tr>
     <td><image src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663208077/bootcamp%20pijarcamp%20project%20cloud%20image/bitri%20desktop/bitri-recipe.web.app_detailrecipe_iv1ogb.png" alt="Detail Recipe" width=100%></td>
-    <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659255601/portofolio/recipe/Edit_Profile_dssupf.png" alt="Edit Recipe" width=100%/></td>
+    <td><image src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663208133/bootcamp%20pijarcamp%20project%20cloud%20image/bitri%20desktop/bitri-recipe.web.app_editrecipe_qef84r.png" alt="Edit Recipe" width=100%/></td>
   </tr>
 </table>
 
@@ -147,8 +147,8 @@ REACT_APP_FE_URL="[YOUR_FRONTEND_URL]"
   </tr>
   <tr>
     <tr>
-    <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659255614/portofolio/recipe/detailRecipe_mgby3w.png" alt="Add Recipe" width=100%></td>
-    <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659255615/portofolio/recipe/detailVideo_rpajes.png" alt="Profile" width=100%/></td>
+    <td><image src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663208041/bootcamp%20pijarcamp%20project%20cloud%20image/bitri%20desktop/bitri-recipe.web.app_newrecipe_usvc9t.png" alt="Add Recipe" width=100%></td>
+    <td><image src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663208218/bootcamp%20pijarcamp%20project%20cloud%20image/bitri%20desktop/bitri-recipe.web.app_profile_swpkce.png" alt="Profile" width=100%/></td>
   </tr>
 </table>
       
