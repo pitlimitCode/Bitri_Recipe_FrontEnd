@@ -22,10 +22,10 @@ export default function HomeNewestRecipe() {
     axios.get(process.env.REACT_APP_BE_URL + "/recipes/all/?sort=desc")
       .then((res) => {
         // setidRecipe(res.data.data[0].id_recipe);
-        setUrl(process.env.REACT_APP_FE_URL + "/detailrecipe/?id=" + res.data.result.data[0].id_recipe);
-        setRecipe(res.data.result.data[0].name_recipe);
-        setUser(res.data.result.data[0].name);
-        setImageUpdate(res.data.result.data[0].image_recipe); /////
+        setUrl(process.env.REACT_APP_FE_URL + "/detailrecipe/?id=" + res.data.result.data[0].id);
+        setRecipe(res.data.result.data[0].name);
+        setUser(res.data.result.data[0].username);
+        setImageUpdate(res.data.result.data[0].image); /////
 
         // console.log(res.data.result.data[0]);
         // console.log(res.data.data[1].image_recipe);

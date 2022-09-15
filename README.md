@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/pitlimitCode/Bitri_Recipe_FrontEnd/tree/master">
-    <img src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659148545/portofolio/recipe/2_kpnvj7.png" alt="Logo" width="150px">
+    <img src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663208268/bootcamp%20pijarcamp%20project%20cloud%20image/logo_bitri_mini1_xhkqa4.png" alt="Logo" width="150px">
   </a>
 
   <h3 align="center">Bitri Recipe</h3>
@@ -49,17 +49,19 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-**Bitri Recipe** Bitri Recipe is a web application that has the main feature where users can share their recipes in the form of video tutorials to make it easier for visitors to learn the recipe they are looking for. This website is developed with using PostgreSql, Express JS, Next JS and Node JS technologies.
+**Bitri Recipe** Bitri Recipe is a web application that has the main feature where users can share their recipes in the form to make it easier for visitors to learn the recipe they are looking for. This website project is developed using with PostgreSql, Express JS, Next JS and Node JS technologies.
 
 ### Built With
 
 This app was built with some technologies below:
-
-- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - [Javascript](https://www.javascript.com/)
 - [React JS](https://reactjs.org)
 - [React-Bootstrap](#)
 - [Axios](https://axios-http.com/)
+- [Redux](#)
+- [PostgreSQL](#)
+- [Railway.app](#)
+- [Google Firebase](#)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -111,7 +113,7 @@ REACT_APP_FE_URL="[YOUR_FRONTEND_URL]"
   </tr>
   <tr>
     <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659351592/portofolio/recipe/login_ukszon.png" alt="Login Page" width=100%></td>
-    <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659351587/portofolio/recipe/register_jsv1kj.png" width=100%/></td>
+    <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659351587/portofolio/recipe/register_jsv1kj.png" alt="Register Page" width=100%/></td>
   </tr>
 </table>
 
@@ -133,20 +135,20 @@ REACT_APP_FE_URL="[YOUR_FRONTEND_URL]"
   </tr>
   <tr>
     <tr>
-    <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659359397/portofolio/recipe/Add_Recipe_ui9vgx.png" alt="add" width=100%></td>
-    <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659255601/portofolio/recipe/Edit_Profile_dssupf.png" alt="edit" width=100%/></td>
+    <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659359397/portofolio/recipe/Add_Recipe_ui9vgx.png" alt="add rec" width=100%></td>
+    <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659255601/portofolio/recipe/Edit_Profile_dssupf.png" alt="edit rec" width=100%/></td>
   </tr>
 </table>
 
 <table>
   <tr>
     <td>Detail Recipe</td>
-    <td>Detail Video</td>
+    <td>image</td>
   </tr>
   <tr>
     <tr>
-    <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659255614/portofolio/recipe/detailRecipe_mgby3w.png" alt="add" width=100%></td>
-    <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659255615/portofolio/recipe/detailVideo_rpajes.png" alt="edit" width=100%/></td>
+    <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659255614/portofolio/recipe/detailRecipe_mgby3w.png" alt="detail rec" width=100%></td>
+    <td><image src="https://res.cloudinary.com/dbpfwb5ok/image/upload/v1659255615/portofolio/recipe/detailVideo_rpajes.png" alt="image" width=100%/></td>
   </tr>
 </table>
       
@@ -166,9 +168,9 @@ Contributions are what make the open source community such an amazing place to b
 :rocket: [`Backend Bitri Recipe`](https://github.com/pitlimitCode/Bitri_Recipe_Web/tree/FrontEnd+)  
 :rocket: [`Frontend Bitri Recipe`](https://github.com/pitlimitCode/Bitri_Recipe_FrontEnd/tree/master)  
 :rocket: [`Frontend Bitri Recipe Mobile`](https://github.com/pitlimitCode/bitri-recipe-mobile)  
-:rocket: [`Web Service`](https://bitri-recipe.herokuapp.com)  
+:rocket: [`Web Service`](https://bitrirecipeweb-production.up.railway.app)  
 :rocket: [`Demo Bitri Recipe`](https://bitri-recipe.web.app/)  
-:rocket: [`Demo Bitri Recipe Mobile`](#)  
+:rocket: [`Demo Bitri Recipe Mobile`](https://bitri-recipe-mobile.vercel.app)  
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Contact
