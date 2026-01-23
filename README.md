@@ -142,11 +142,9 @@ REACT_APP_FE_URL="[YOUR_FRONTEND_URL]"
 <table>
   <tr>
     <td>Add Recipe</td>
-    <td>Profile</td>
   </tr>
   <tr>
     <td><image src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663208041/bootcamp%20pijarcamp%20project%20cloud%20image/bitri%20desktop/bitri-recipe.web.app_newrecipe_usvc9t.png" alt="Add Recipe" width=100%></td>
-    <td><image src="https://res.cloudinary.com/dy3yw6bod/image/upload/v1663208218/bootcamp%20pijarcamp%20project%20cloud%20image/bitri%20desktop/bitri-recipe.web.app_profile_swpkce.png" alt="Profile" width=100%/></td>
   </tr>
 </table>
       
